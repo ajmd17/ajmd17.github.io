@@ -1,0 +1,161 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #F0F0F0;
+    /*background: url('../img/bg2.jpg')  no-repeat center center fixed;
+    background-size: cover;*/
+}
+
+#top-bar-wrapper {
+
+    width: 100%;
+    /*background: url('../img/bg2-blurred.jpg')  no-repeat center center fixed;
+    background-size: cover;*/
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    /*box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.2);*/
+}
+
+#top-bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #3982D1; /*#E74C3C;*/ /*rgba(100, 105, 104, 0.5);*/
+    color: #FFFFFF;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+#top-bar .center {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#top-bar h1 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#top-bar hr {
+    border: none;
+    border-bottom: 2px solid #FF675B;
+}
+
+#top-bar p {
+    font-size: 20px;
+}
+
+#page-links {
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+#page-links > li {
+    font-size: 30px;
+    display: inline-block;
+    padding: 0 0 0 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#page-links > li:hover {
+    color: #9A2519;
+}
+
+#bg-canvas {
+
+    position: absolute;
+    width : 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 5;
+}
+
+#main-bg {
+    width: 100%;
+    height: 100%;
+}
+
+#main-body-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#main-body {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+#main-body-content {
+    position: relative;
+    width: 90%;
+    height: 95%;
+    margin: 0 auto;
+    padding: 2.5% 0;
+}
+
+#main-body .center {
+    position: relative;
+    
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#main-body hr {
+    border: none;
+    border-bottom: 2px solid #BBC3CC;
+    margin: 10px 40px;
+}
+
+.portfolio-title {
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+@media (max-width: 950px) {
+    #top-bar h1 {
+        font-size: 20px;
+    }
+
+    #page-links > li {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    #main-body {
+        width: 94%;
+    }
+    #top-bar .center {
+        width: 94%;
+    }
+
+    #top-bar h1 {
+        font-size: 16px;
+    }
+
+    #page-links > li {
+        padding-left: 8px;
+        font-size: 16px;
+    }
+}
