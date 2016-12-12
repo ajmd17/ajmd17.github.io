@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Raleway" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/cards.css">
     </head>
 
     <body>
@@ -25,18 +26,68 @@
         <div id="main-body-wrapper">
             <!--<canvas id="bg-canvas" width="200" height="200">
             </canvas>-->
+            <!--<div id="big-section">
+                <div id="big-section-content">
+                    <hr>
+                    <p>
+                        I'm a guy who loves to code.
+                    </p>
+                </div>
+            </div>-->
 
-            <div id="main-body">
+            <div>
+                <div class="page">
+                    <div class="page-content">
+                        <h3>About</h3>
+                        <hr>
+                        <p>
+                            Hello! My name is Andrew MacDonald and I like to code things!<br>
+                            I live in Sydney, Nova Scotia, where I am currently attending UIT.
+                        </p>
+                    </div>
+                </div>
 
-                <div id="main-body-content">
-                    <h3>Hello!</h3>
+                <div class="page">
+                    <div class="page-content">
+                        <h3>Skills</h3>
+                        <hr>
+                        <div class="skill-row">
+                            <div class="circle">JavaScript</div>
+                            <div class="circle">HTML/CSS</div>
+                            <div class="circle">C++</div>
+                            <div class="circle">Java</div>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="portfolio-section">
-                        <!--<h3 class="portfolio-title">Projects</h3>
-                        <hr>-->
-
-                        <div class="center">
-                            <div class="portfolio-row">
+                <div class="page">
+                    <div class="page-content">
+                        <h3>Projects</h3>
+                        <hr>
+                        <div class="project-circles">
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/vennio.png"></img>
+                                <span class="description">
+                                    Vennio is a different take on project management, focusing on visual representations rather than textual.
+                                </span>
+                            </div>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/acelang.png"></img>
+                                <span class="description">
+                                    Ace is a dynamic programming language with some interesting new features, while still feeling like a familiar language.
+                                </span>
+                            </div>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/ytroom.png"></img>
+                                <span class="description">
+                                    YTRoom lets you watch videos together in sync.
+                                </span>
+                            </div>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/apex3d.png"></img>
+                                <span class="description">
+                                    Apex3D is a game engine written in C++ (originally in C#).
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -44,10 +95,8 @@
             </div>
         </div>
 
-        <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
+        <script src="js/external/jquery.min.js"></script>
+        <script src="js/cards.js"></script>
         <!--<script src="js/canvas.js"></script>
         -->
     </body>
