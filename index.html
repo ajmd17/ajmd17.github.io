@@ -16,8 +16,8 @@
                     <p>A portfolio of awesomeness</p>-->
 
                     <ul id="page-links">
-                        <li>Projects</li>
-                        <li>About</li>
+                        <li id="about-link">About</li>
+                        <li id="projects-link">Projects</li>
                         <li>Contact</li>
                     </ul>
                 </div>
@@ -35,59 +35,113 @@
                 </div>
             </div>-->
 
-            <div>
-                <div class="page">
-                    <div class="page-content">
-                        <h3>About</h3>
-                        <hr>
-                        <p>
-                            Hello! My name is Andrew MacDonald and I like to code things!<br>
-                            I live in Sydney, Nova Scotia, where I am currently attending UIT.
-                        </p>
+            <div class="banner">
+                <!--<div class="banner-center-circle">
+                    <div class="banner-center-content">
                     </div>
                 </div>
+                <div class="banner-bg"></div>-->
 
-                <div class="page">
+                <!--<div class="banner-bottom"></div>-->
+            </div>
+
+            <div>
+                <div class="page" id="about">
                     <div class="page-content">
-                        <h3>Skills</h3>
-                        <hr>
-                        <div class="skill-row">
-                            <div class="circle">JavaScript</div>
-                            <div class="circle">HTML/CSS</div>
-                            <div class="circle">C++</div>
-                            <div class="circle">Java</div>
+                        <h3>About</h3>
+                        <div class="page-content-inner">
+                            <p class="intro-text">
+                                Hello! My name is Andrew MacDonald and I like to code things!<br>
+                                I live in Sydney, Nova Scotia, where I am currently a student at UIT.
+                                <br><br>
+                                I've always loved programming, ever since I was a child. Since then, I've used many different tools and languages, and I'm always looking to learn more!
+                                <br><br>
+                                Here are some of the languages and tools I've worked with:
+                            </p>
+                            <div class="skill-row">
+                                <div class="circle">JavaScript</div>
+                                <div class="circle">HTML/CSS</div>
+                                <div class="circle">C++</div>
+                                <div class="circle">PHP</div>
+                                <div class="circle">Java</div>
+                                <div class="circle">C#</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="page">
+                <div class="page" id="projects">
                     <div class="page-content">
                         <h3>Projects</h3>
-                        <hr>
-                        <div class="project-circles">
+                        <div class="page-content-inner">
                             <div class="project-circle">
                                 <img src="img/portfolio-items/vennio.png"></img>
+                                <div class="project-title">
+                                    <h3>Vennio</h3>
+                                </div>
                                 <span class="description">
-                                    Vennio is a different take on project management, focusing on visual representations rather than textual.
+                                    A different take on project management.<br>
+                                    Focus on the visual components of a project.
                                 </span>
+
+                                <div class="links">
+                                    <a target="_blank" href="http://ajmd17.github.io/vennio">View Page</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/vennio">Github</a>
+                                </div>
                             </div>
+                            <hr>
                             <div class="project-circle">
                                 <img src="img/portfolio-items/acelang.png"></img>
+                                <div class="project-title">
+                                    <h3>Ace</h3>
+                                </div>
                                 <span class="description">
-                                    Ace is a dynamic programming language with some interesting new features, while still feeling like a familiar language.
+                                    A dynamic programming language, created from scratch.
                                 </span>
+                                <div class="links">
+                                    <a target="_blank" href="http://github.com/ajmd17/ace-lang">Github</a>
+                                </div>
                             </div>
+                            <hr>
                             <div class="project-circle">
                                 <img src="img/portfolio-items/ytroom.png"></img>
+                                <div class="project-title">
+                                    <h3>YTRoom</h3>
+                                </div>
                                 <span class="description">
-                                    YTRoom lets you watch videos together in sync.
+                                    Watch videos with others in sync.
                                 </span>
+                                <div class="links">
+                                    <a target="_blank" href="http://tweetographics.com/ytroom">View Page</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/ytroom">Github</a>
+                                </div>
                             </div>
+                            <hr>
                             <div class="project-circle">
                                 <img src="img/portfolio-items/apex3d.png"></img>
+                                <div class="project-title">
+                                    <h3>Apex3D</h3>
+                                </div>
                                 <span class="description">
-                                    Apex3D is a game engine written in C++ (originally in C#).
+                                    OpenGL game engine written in C++.<br>
+                                    Originally written in C#, as well as Java at one point!
                                 </span>
+                                <div class="links">
+                                    <a target="_blank" href="http://github.com/ajmd17/apex-engine">Github</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/apex3d.png"></img>
+                                <div class="project-title">
+                                    <h3>Tweetographics</h3>
+                                </div>
+                                <span class="description">
+                                    See where in the world people are tweeting about something.
+                                </span>
+                                <div class="links">
+                                    <a target="_blank" href="http://tweetographics.com">View Page</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -97,6 +151,7 @@
 
         <script src="js/external/jquery.min.js"></script>
         <script src="js/cards.js"></script>
+        <script src="js/index.js"></script>
         <!--<script src="js/canvas.js"></script>
         -->
     </body>

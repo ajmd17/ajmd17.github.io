@@ -7,38 +7,38 @@ body {
     background: url('../img/pattern-blue.png') no-repeat center center fixed;
     background-size: cover;*/
 
-    /*background: url('../img/bg2.jpg')  no-repeat center center fixed;
-    background-size: cover;*/
+    background: url('../img/pattern-blue.png')  no-repeat center center fixed;
+    background-size: cover;
+
 }
 
 #top-bar-wrapper {
 
     width: 100%;
-    /*background: url('../img/bg2-blurred.jpg')  no-repeat center center fixed;
-    background-size: cover;*/
     overflow: hidden;
     position: fixed;
     z-index: 2;
+    
+    background-color: transparent;
 }
 
 #top-bar {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #E74C3C; /*rgba(100, 105, 104, 0.5);*/
-    color: #FFFFFF;
+    background-color: rgba(20, 20, 20, 0.8);
     padding: 20px 0;
+    /*background-color: #2E6BAB;*/ /*rgba(100, 105, 104, 0.5);*/
+    color: #FFFFFF;
     overflow: hidden;
-    
+    transition: all 0.4s ease-in-out;
 }
-
 #top-bar .center {
     position: relative;
     width: 80%;
     height: 100%;
     margin: 0 auto;
 }
-
 #top-bar h1 {
     font-size: 24px;
     text-align: center;
@@ -46,18 +46,16 @@ body {
     padding: 0;
     text-transform: uppercase;
     display: inline-block;
+    transition: all 0.4s ease-in-out;
 }
-
 #top-bar hr {
     border: none;
     border-bottom: 2px solid #FF675B;
 }
-
 #top-bar p {
     font-size: 20px;
 }
-
-#page-links {
+#top-bar #page-links {
     float: right;
     list-style: none;
     margin: 0;
@@ -65,26 +63,74 @@ body {
     display: inline-block;
     text-align: center;
 }
-
-#page-links > li {
+#top-bar #page-links > li {
     font-size: 24px;
     display: inline-block;
     padding: 0 0 0 20px;
     border-radius: 4px;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
 }
-
-#page-links > li:hover {
+#top-bar #page-links > li:hover {
     color: #9A2519;
 }
 
-#bg-canvas {
+#top-bar.shrinked {
+    padding: 10px 0;
+}
+#top-bar.shrinked h1 {
+    font-size: 16px;
+}
+#top-bar.shrinked #page-links > li {
+    font-size: 16px;
+}
 
+#bg-canvas {
     position: absolute;
     width : 100%;
     height: 100%;
     background-color: transparent;
     z-index: 5;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 65px;
+}
+.banner-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.banner-bottom {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    background-color: black;
+}
+.banner-center-circle {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 6px;
+    color: #000;
+
+    background: url('../img/pattern-blue-blurred.png')  no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+
+    text-align: center;
+    width: 80%;
+    vertical-align: middle;
+    margin-top: 69px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100px;
+    z-index: 1;
+}
+.banner-center-content {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #big-section {
@@ -119,16 +165,24 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    margin-top: 72px;
+}
+
+.intro-text {
+    font-size: 20px;
+    line-height: 150%;
 }
 
 .page {
-    background-color: #FFFFFF;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     position: relative;
+    overflow: hidden;
+    
+    background: url('../img/pattern-blue-blurred.png')  no-repeat center center fixed;
+    background-size: cover;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     width: 80%;
-    /*height: 96%;*/
+
     margin-top: 2%;
     margin-bottom: 2%;
     height: auto;
@@ -137,14 +191,12 @@ body {
 
 .page-content {
     padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .page .center {
-    position: relative;
+    background-color: #DDD;
     
-    width: 70%;
-    height: 100%;
-    margin: 0 auto;
 }
 
 .page hr {
@@ -152,11 +204,13 @@ body {
     border-bottom: 2px solid #F0F0F0;
     margin: 0;
 }
-.page h3 {
-    margin: 0 0 10px 0;
+.page > .page-content > h3 {
+    margin: 0;
+    padding: 0px 0 10px 0;
     font-size: 1.4em;
     text-align: center;
-    color: #000;
+    color: #333;
+    overflow: hidden;
 }
 
 .skill-row {
@@ -168,7 +222,7 @@ body {
     display: inline-block;
 }
 .circle {
-    font-size: 20px;
+    font-size: 18px;
     color: #FFFFFF;
     border-radius: 50%;
     border: 4px solid #3982D1;
@@ -177,44 +231,80 @@ body {
 
     text-align: center;
     vertical-align: middle;
-    line-height: 120px;
-    width: 120px;
-    height: 120px;
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+}
+.page-content-inner {
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 6px;
 }
 .project-circle {
+    position: relative;
     display: block;
-    height: 128px;
+    height: 86px;
     margin: 10px;
-}
-.project-circle > div {
-    display: inline-block;
 }
 .project-circle > img {
     float: left;
-    width: 128px;
-    height: 128px;
+    width: 86px;
+    height: 86px;
     margin-right: 20px;
+}
+.project-circle h3 {
+    text-align: left;
+    display: inline-block;
+    margin: 0 0 4px 0;
 }
 .project-circle > .description {
     vertical-align: top;
     padding: 0;
     margin: 0;
 }
+.project-circle > .links {
+    position: absolute;
+    bottom: 0;
+    margin-left: 106px;
+}
+.project-circle > .links * {
+    margin-right: 10px;
+    font-size: 16px;
+}
 
+.project-circle ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.project-circle li {
+    display: inline-block;
+    margin: 0;
+    margin-left: 5px;
+}
+
+.project-circle a {
+    color: #3F92EB;
+    text-decoration: none;
+}
+.project-circle a:hover {
+    text-decoration: underline;
+}
 
 @media (max-width: 950px) {
     #top-bar h1 {
         font-size: 20px;
     }
+    #top-bar #page-links > li {
+        font-size: 20px;
+    }
+
     #big-section-content {
         margin-top: 60px;
     }
     #main-page-wrapper {
         margin-top: 60px;
-    }
-
-    #page-links > li {
-        font-size: 20px;
     }
 
     #big-section {
@@ -245,15 +335,6 @@ body {
         margin-top: 54px;
     }
 
-    #top-bar h1 {
-        font-size: 16px;
-    }
-
-    #page-links > li {
-        padding-left: 8px;
-        font-size: 16px;
-    }
-
     #big-section {
         height: 117px;
     }
@@ -263,5 +344,19 @@ body {
         width: 80px;
         height: 80px;
         margin: 4px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .project-circle {
+        height: auto;
+    }
+    .project-circle > .links {
+        
+        position: relative;
+        bottom: 0;
+        margin-left: 0;
     }
 }
