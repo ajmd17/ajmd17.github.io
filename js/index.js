@@ -9,6 +9,11 @@ $(document).ready(function() {
             scrollTop: $('#projects').offset().top - $('#top-bar-wrapper').height()
         }, 500);
     });
+    $('#contact-link').click(function() {
+        $('html, body').animate({
+            scrollTop: $('#contact').offset().top - $('#top-bar-wrapper').height()
+        }, 500);
+    });
 });
 
 $(document).scroll(function() {

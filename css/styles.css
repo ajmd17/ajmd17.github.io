@@ -13,7 +13,6 @@ body {
 }
 
 #top-bar-wrapper {
-
     width: 100%;
     overflow: hidden;
     position: fixed;
@@ -26,7 +25,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(71, 87, 99, 0.95);
     padding: 20px 0;
     /*background-color: #2E6BAB;*/ /*rgba(100, 105, 104, 0.5);*/
     color: #FFFFFF;
@@ -72,7 +71,7 @@ body {
     transition: all 0.4s ease-in-out;
 }
 #top-bar #page-links > li:hover {
-    color: #9A2519;
+    color: #3F92EB;
 }
 
 #top-bar.shrinked {
@@ -168,8 +167,14 @@ body {
 }
 
 .intro-text {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 150%;
+    text-align: center;
+}
+.intro-text-smaller {
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
 }
 
 .page {
@@ -292,12 +297,18 @@ body {
     text-decoration: underline;
 }
 
+.contact-text {
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+}
+
 @media (max-width: 950px) {
     #top-bar h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     #top-bar #page-links > li {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #big-section-content {
@@ -317,8 +328,21 @@ body {
         width: 100px;
         height: 100px;
     }
+
+    .skill-row .break {
+        display: block !important;
+        position: relative;
+        width: 100%;
+    }
 }
 @media (max-width: 768px) {
+    #top-bar h1 {
+        font-size: 18px;
+    }
+    #top-bar #page-links > li {
+        font-size: 18px;
+    }
+    
     .page {
         width: 94%;
     }
