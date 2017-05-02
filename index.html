@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/cards.css">
     </head>
@@ -12,14 +12,11 @@
             <div id="top-bar">
                 <div class="center">
                     <h1>Andrew MacDonald</h1>
-                    <!--<hr>
-                    <p>A portfolio of awesomeness</p>-->
-
-                    <ul id="page-links">
+                    <!--<ul id="page-links">
                         <li id="about-link">About</li>
                         <li id="projects-link">Projects</li>
                         <li id="contact-link">Contact</li>
-                    </ul>
+                    </ul>-->
                 </div>
             </div>
         </div>
@@ -35,37 +32,37 @@
                 </div>
             </div>-->
 
-            <div class="banner">
-                <!--<div class="banner-center-circle">
-                    <div class="banner-center-content">
-                    </div>
-                </div>
-                <div class="banner-bg"></div>-->
-
-                <!--<div class="banner-bottom"></div>-->
-            </div>
-
-            <div>
+            <div class="pages">
                 <div class="page" id="about">
                     <div class="page-content">
-                        <h3>About</h3>
                         <div class="page-content-inner">
                             <p class="intro-text">
-                                Hello! My name is Andrew MacDonald and I like to code things!<br>
-                                I live in Sydney, Nova Scotia, where I am currently a student at UIT.
+                                I'm a 20 year old coder and musician from Sydney, Nova Scotia.
+                                I started playing guitar when I was eleven, and coding shortly thereafter.<br><br>
+                                I'm obsessed with turning ideas into software.
                             </p>
-                            <hr>
-                            <p class="intro-text-smaller">
-                                Here are some of the languages and tools I've worked with:
-                            </p>
-                            <div class="skill-row">
-                                <div class="circle">JavaScript</div>
-                                <div class="circle">HTML/CSS</div>
-                                <div class="circle">C++</div>
-                                <div class="break" style="display:none;"></div>
-                                <div class="circle">PHP</div>
-                                <div class="circle">Java</div>
-                                <div class="circle">C#</div>
+
+                            <div class="profile-links">
+                                <div class="profile-link">
+                                    <img src="/img/github.png">
+                                    <a href="https://github.com/ajmd17" target="_blank">
+                                        View my GitHub profile
+                                    </a>
+                                </div>
+                                <div class="profile-link">
+                                    <img src="/img/email.png">
+                                    <a id="send-email-link" href="#">
+                                        Send me an email
+                                    </a>
+                                </div>
+
+                                <div id="email-address-box" style="display: none">
+                                    You can send an email to me personally at:
+                                    <div id="email-address-val"></div>
+                                    <a id="close-email-box" href="#">
+                                        Close
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,12 +70,13 @@
 
                 <div class="page" id="projects">
                     <div class="page-content">
-                        <h3>Projects</h3>
                         <div class="page-content-inner">
                             <div class="project-circle">
                                 <img src="img/portfolio-items/vennio.png"></img>
                                 <div class="project-title">
-                                    <h3>Vennio</h3>
+                                    <h3>
+                                        Vennio Project Manager
+                                    </h3>
                                 </div>
                                 <span class="description">
                                     A different take on project management.<br>
@@ -86,80 +84,95 @@
                                 </span>
 
                                 <div class="links">
-                                    <a target="_blank" href="http://ajmd17.github.io/vennio">View Page</a>
-                                    <a target="_blank" href="http://github.com/ajmd17/vennio">Github</a>
+                                    <a href="https://ajmd17.github.io/vennio" target="_blank">View Page</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/vennio">GitHub</a>
                                 </div>
                             </div>
-                            <hr>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/tweetographics.png"></img>
+                                <div class="project-title">
+                                    <h3>
+                                        Tweetographics
+                                    </h3>
+                                </div>
+                                <span class="description">
+                                    See a visual representation of where people are tweeting about anything.
+                                </span>
+                                <div class="links">
+                                    <a href="http://tweeto.graphics/" target="_blank">View Page</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/tweetographics">GitHub</a>
+                                </div>
+                            </div>
+                            
                             <div class="project-circle">
                                 <img src="img/portfolio-items/acelang.png"></img>
                                 <div class="project-title">
-                                    <h3>Ace</h3>
+                                    <h3>Ace Programming Language</h3>
                                 </div>
                                 <span class="description">
-                                    A dynamic programming language, created from scratch.
+                                    A dynamic programming language with a VM, created from scratch in C++.
                                 </span>
                                 <div class="links">
-                                    <a target="_blank" href="http://github.com/ajmd17/ace-lang">Github</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/ace-lang">GitHub</a>
                                 </div>
                             </div>
-                            <hr>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/bidsquid.png"></img>
+                                <div class="project-title">
+                                    <h3>BidSquid Online Marketplace</h3>
+                                </div>
+                                <span class="description">
+                                    A marketplace for local agricultural producers and buyers, where both sides of the market are accessible.
+                                </span>
+                                <div class="links">
+                                    <a href="http://bidsquid.ca" target="_blank">View Page</a>
+                                </div>
+                            </div>
                             <div class="project-circle">
                                 <img src="img/portfolio-items/ytroom.png"></img>
                                 <div class="project-title">
-                                    <h3>YTRoom</h3>
+                                    <h3>
+                                        YTRoom
+                                    </h3>
                                 </div>
                                 <span class="description">
                                     Watch videos with others in sync.
                                 </span>
                                 <div class="links">
-                                    <a target="_blank" href="https://ajmd17.github.io/YTRoom">View Page</a>
-                                    <a target="_blank" href="http://github.com/ajmd17/ytroom">Github</a>
+                                    <a href="https://ajmd17.github.io/YTRoom" target="_blank">View Page</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/ytroom">GitHub</a>
                                 </div>
                             </div>
-                            <hr>
+                            <div class="project-circle">
+                                <img src="img/portfolio-items/tangos.png"></img>
+                                <div class="project-title">
+                                    <h3>
+                                        Tangerine Operating System
+                                    </h3>
+                                </div>
+                                <span class="description">
+                                    A 32-bit operating system written in C, created from scratch with my brother.
+                                </span>
+                                <div class="links">
+                                    <a target="_blank" href="https://github.com/ajmd17/TangOS">GitHub</a>
+                                </div>
+                            </div>
                             <div class="project-circle">
                                 <img src="img/portfolio-items/apex3d.png"></img>
                                 <div class="project-title">
-                                    <h3>Apex3D</h3>
+                                    <h3>Apex3D Game Engine</h3>
                                 </div>
                                 <span class="description">
                                     OpenGL game engine written in C++.<br>
                                     Originally written in C#, as well as Java at one point!
                                 </span>
                                 <div class="links">
-                                    <a target="_blank" href="http://github.com/ajmd17/apex-engine">Github</a>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/tweetographics.png"></img>
-                                <div class="project-title">
-                                    <h3>Tweetographics</h3>
-                                </div>
-                                <span class="description">
-                                    See where in the world people are tweeting about something.
-                                </span>
-                                <div class="links">
-                                    <a target="_blank" href="http://tweetographics.com">View Page</a>
+                                    <a target="_blank" href="http://github.com/ajmd17/apex-engine">GitHub</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="page" id="contact">
-                    <div class="page-content">
-                        <h3>Contact</h3>
-                        <div class="page-content-inner">
-                            <p class="contact-text">
-                                You can get in touch with me by sending me an email at:<br>
-                                andrewmacdonald971@gmail.com
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
