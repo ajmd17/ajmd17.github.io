@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 
     $('#send-email-link').click(function () {
-        $('#email-address-val').html('andrewmacdonald97@hotmail.com');
+        $('#email-address-val').html('hello@andrewjmacdonald.ca');
         $('#email-address-box').show();
     });
 
