@@ -159,12 +159,6 @@ a {
     height: 100%;
 }
 
-#main-body-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
 .intro-text {
     margin: 0;
     font-size: 20px;
@@ -306,8 +300,6 @@ a {
     margin-left: 20px;
 }
 .project-circle h3 {
-    text-align: left;
-    display: inline-block;
     margin: 0 0 10px 0;
     font-size: 24px;
 }
@@ -347,38 +339,6 @@ a {
     text-align: center;
 }
 
-@media (max-width: 950px) {
-    #top-bar h1 {
-        font-size: 18px;
-    }
-    #top-bar #page-links > li {
-        font-size: 18px;
-    }
-
-    #big-section-content {
-        margin-top: 60px;
-    }
-    #main-page-wrapper {
-        margin-top: 60px;
-    }
-
-    #big-section {
-        height: 122px;
-    }
-
-    .circle {
-        font-size: 16px;
-        line-height: 100px;
-        width: 100px;
-        height: 100px;
-    }
-
-    .skill-row .break {
-        display: block !important;
-        position: relative;
-        width: 100%;
-    }
-}
 @media (max-width: 768px) {
     #top-bar h1 {
         font-size: 24px;
@@ -397,23 +357,12 @@ a {
     }
 
     #projects {
-        margin-left: 0;
+        margin: 0 auto;
+        margin-top: 50px;
     }
     
     .page {
-        width: 94%;
-    }
-    #top-bar .center {
-        width: 94%;
-    }
-    #big-section-content {
-        margin-top: 54px;
-        width: 94%;
-        margin-left: 3%;
-        margin-right: 3%;
-    }
-    #main-page-wrapper {
-        margin-top: 54px;
+        width: 100%;
     }
 
     #big-section {
@@ -433,6 +382,11 @@ a {
 
     .project-circle {
         height: auto;
+        text-align: center;
+    }
+    .project-circle > img {
+        float: none;
+        margin: 0 0 20px 0;
     }
     .project-circle > .links {
         
