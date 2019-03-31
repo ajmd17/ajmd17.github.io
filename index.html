@@ -8,156 +8,208 @@
     </head>
 
     <body>
-        <div id="top-bar-wrapper">
-            <div id="top-bar">
-                <div class="center">
-                    <h1>Andrew MacDonald</h1>
-                    <!--<ul id="page-links">
-                        <li id="about-link">About</li>
-                        <li id="projects-link">Projects</li>
-                        <li id="contact-link">Contact</li>
-                    </ul>-->
+        <div id="main-body-wrapper">
+            <div class="page" id="about">
+                <div class="top-bar-wrapper">
+                    <div class="top-bar">
+                        <h1>Andrew MacDonald</h1>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="page-content-inner">
+                        <p class="intro-text">
+                            I'm a software developer from Sydney, NS, Canada.<br>
+                            Programming has been my passion since a young age, and has been an outlet for my ideas.<br>
+                            Here you'll find some of my favourite projects I've worked on.
+                        </p>
+
+                        <div class="profile-links">
+                            <div class="profile-link">
+                                <img src="/img/github.png">
+                                <a href="https://github.com/ajmd17" target="_blank">
+                                    View my GitHub profile
+                                </a>
+                            </div>
+                            <div class="profile-link">
+                                <img src="/img/email.png">
+                                <a id="send-email-link" href="#">
+                                    Send me an email
+                                </a>
+                            </div>
+
+                            <div id="email-address-box" style="display: none">
+                                You can send an email to me personally at:
+                                <div id="email-address-val"></div>
+                                <a id="close-email-box" href="#">
+                                    Close
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <ul class="occupations">
+                            <li>
+                                <img src="img/portfolio-items/vennio.png" style="display:none"></img>
+                                <div class="project-title">
+                                    <h3>
+                                        Marcato Digital Solutions
+                                    </h3>
+                                    <small>
+                                        <a href="https://marcatofestival.com">
+                                            https://marcatofestival.com
+                                        </a>
+                                    </small>
+                                </div>
+                                <p class="description">
+                                    Software Developer
+                                </p>
+                                <p class="description">
+                                    Jun 2017 / --
+                                </p>
+                            </li>
+                            <li>
+                                <img src="img/portfolio-items/bidsquid.png" style="display:none"></img>
+                                <div class="project-title">
+                                    <h3>
+                                        BidSquid Online Marketplace
+                                    </h3>
+                                    <small>
+                                        <a href="https://bidsquid.ca">
+                                            https://bidsquid.ca
+                                        </a>
+                                    </small>
+                                </div>
+                                <p class="description">
+                                    Co-founder, Software Developer
+                                </p>
+                                <p class="description">
+                                    Jan 2017 / --
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="main-body-wrapper">
-            <div class="pages">
-                <div class="page" id="about">
-                    <div class="page-content">
-                        <div class="page-content-inner">
-                            <p class="intro-text">
-                                I'm a 20 year old coder and musician from Sydney, Nova Scotia.
-                                I started playing guitar when I was eleven, and coding shortly thereafter.<br><br>
-                                I'm obsessed with turning ideas into software.
-                            </p>
 
-                            <div class="profile-links">
-                                <div class="profile-link">
-                                    <img src="/img/github.png">
-                                    <a href="https://github.com/ajmd17" target="_blank">
-                                        View my GitHub profile
-                                    </a>
-                                </div>
-                                <div class="profile-link">
-                                    <img src="/img/email.png">
-                                    <a id="send-email-link" href="#">
-                                        Send me an email
-                                    </a>
-                                </div>
+            <div class="page half" id="projects">
+                <div class="top-bar-wrapper">
+                    <div class="top-bar">
+                        <h3>Projects</h3>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="page-content-inner">
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/acelang.png"></img>
+                            <div class="project-title">
+                                <h3>Ace Programming Language</h3>
+                            </div>
+                            <span class="description">
+                                A dynamic programming language with a VM, created from scratch in C++.
+                            </span>
+                            <div class="links">
+                                <a target="_blank" href="http://github.com/ajmd17/ace-lang">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/vennio.png"></img>
+                            <div class="project-title">
+                                <h3>
+                                    Vennio Project Manager
+                                </h3>
+                            </div>
+                            <span class="description">
+                                A different take on project management.<br>
+                                Focus on the visual components of a project.
+                            </span>
 
-                                <div id="email-address-box" style="display: none">
-                                    You can send an email to me personally at:
-                                    <div id="email-address-val"></div>
-                                    <a id="close-email-box" href="#">
-                                        Close
-                                    </a>
-                                </div>
+                            <div class="links">
+                                <a href="https://ajmd17.github.io/vennio" target="_blank">View Page</a>
+                                <a target="_blank" href="http://github.com/ajmd17/vennio">GitHub</a>
+                            </div>
+                        </div>
+                        
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/ytroom.png"></img>
+                            <div class="project-title">
+                                <h3>
+                                    YTRoom
+                                </h3>
+                            </div>
+                            <span class="description">
+                                Watch videos with others in sync.
+                            </span>
+                            <div class="links">
+                                <a href="https://ajmd17.github.io/YTRoom" target="_blank">View Page</a>
+                                <a target="_blank" href="http://github.com/ajmd17/ytroom">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/apex3d.png"></img>
+                            <div class="project-title">
+                                <h3>Apex3D Game Engine</h3>
+                            </div>
+                            <span class="description">
+                                OpenGL game engine written in C++.<br>
+                                Originally written in C#, as well as Java at one point!
+                            </span>
+                            <div class="links">
+                                <a target="_blank" href="http://github.com/ajmd17/apex-engine">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/tangos.png"></img>
+                            <div class="project-title">
+                                <h3>
+                                    Tangerine Operating System
+                                </h3>
+                            </div>
+                            <span class="description">
+                                A 32-bit operating system written in C, created from scratch with my brother.
+                            </span>
+                            <div class="links">
+                                <a target="_blank" href="https://github.com/ajmd17/TangOS">GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/tweetographics.png"></img>
+                            <div class="project-title">
+                                <h3>
+                                    Tweetographics
+                                </h3>
+                            </div>
+                            <span class="description">
+                                See a visual representation of where people are tweeting about anything.
+                            </span>
+                            <div class="links">
+                                <a href="http://tweeto.graphics/" target="_blank">View Page</a>
+                                <a target="_blank" href="http://github.com/ajmd17/tweetographics">GitHub</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="page" id="projects">
-                    <div class="page-content">
-                        <div class="page-content-inner">
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/vennio.png"></img>
-                                <div class="project-title">
-                                    <h3>
-                                        Vennio Project Manager
-                                    </h3>
-                                </div>
-                                <span class="description">
-                                    A different take on project management.<br>
-                                    Focus on the visual components of a project.
-                                </span>
-
-                                <div class="links">
-                                    <a href="https://ajmd17.github.io/vennio" target="_blank">View Page</a>
-                                    <a target="_blank" href="http://github.com/ajmd17/vennio">GitHub</a>
-                                </div>
+            <div class="page half top" id="languages" style="display:none">
+                <div class="top-bar-wrapper right">
+                    <div class="top-bar">
+                        <h3>Languages</h3>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="page-content-inner">
+                        <div class="project-circle">
+                            <img src="img/portfolio-items/acelang.png"></img>
+                            <div class="project-title">
+                                <h3>Ace Programming Language</h3>
                             </div>
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/tweetographics.png"></img>
-                                <div class="project-title">
-                                    <h3>
-                                        Tweetographics
-                                    </h3>
-                                </div>
-                                <span class="description">
-                                    See a visual representation of where people are tweeting about anything.
-                                </span>
-                                <div class="links">
-                                    <a href="http://tweeto.graphics/" target="_blank">View Page</a>
-                                    <a target="_blank" href="http://github.com/ajmd17/tweetographics">GitHub</a>
-                                </div>
-                            </div>
-                            
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/acelang.png"></img>
-                                <div class="project-title">
-                                    <h3>Ace Programming Language</h3>
-                                </div>
-                                <span class="description">
-                                    A dynamic programming language with a VM, created from scratch in C++.
-                                </span>
-                                <div class="links">
-                                    <a target="_blank" href="http://github.com/ajmd17/ace-lang">GitHub</a>
-                                </div>
-                            </div>
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/bidsquid.png"></img>
-                                <div class="project-title">
-                                    <h3>BidSquid Online Marketplace</h3>
-                                </div>
-                                <span class="description">
-                                    A marketplace for local agricultural producers and buyers, where both sides of the market are accessible.
-                                </span>
-                                <div class="links">
-                                    <a href="http://bidsquid.ca" target="_blank">View Page</a>
-                                </div>
-                            </div>
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/ytroom.png"></img>
-                                <div class="project-title">
-                                    <h3>
-                                        YTRoom
-                                    </h3>
-                                </div>
-                                <span class="description">
-                                    Watch videos with others in sync.
-                                </span>
-                                <div class="links">
-                                    <a href="https://ajmd17.github.io/YTRoom" target="_blank">View Page</a>
-                                    <a target="_blank" href="http://github.com/ajmd17/ytroom">GitHub</a>
-                                </div>
-                            </div>
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/tangos.png"></img>
-                                <div class="project-title">
-                                    <h3>
-                                        Tangerine Operating System
-                                    </h3>
-                                </div>
-                                <span class="description">
-                                    A 32-bit operating system written in C, created from scratch with my brother.
-                                </span>
-                                <div class="links">
-                                    <a target="_blank" href="https://github.com/ajmd17/TangOS">GitHub</a>
-                                </div>
-                            </div>
-                            <div class="project-circle">
-                                <img src="img/portfolio-items/apex3d.png"></img>
-                                <div class="project-title">
-                                    <h3>Apex3D Game Engine</h3>
-                                </div>
-                                <span class="description">
-                                    OpenGL game engine written in C++.<br>
-                                    Originally written in C#, as well as Java at one point!
-                                </span>
-                                <div class="links">
-                                    <a target="_blank" href="http://github.com/ajmd17/apex-engine">GitHub</a>
-                                </div>
+                            <span class="description">
+                                A dynamic programming language with a VM, created from scratch in C++.
+                            </span>
+                            <div class="links">
+                                <a target="_blank" href="http://github.com/ajmd17/ace-lang">GitHub</a>
                             </div>
                         </div>
                     </div>

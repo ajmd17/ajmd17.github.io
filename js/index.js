@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#about-link').click(function () {
+    /*$('#about-link').click(function () {
         $('html, body').animate({
             scrollTop: $('#about').offset().top - $('#top-bar-wrapper').height()
         }, 500);
@@ -15,7 +15,7 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: $('#contact').offset().top - $('#top-bar-wrapper').height()
         }, 500);
-    });
+    });*/
 
 
     $('#send-email-link').click(function () {
