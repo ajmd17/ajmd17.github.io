@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     $('#send-email-link').click(function () {
         var addr = 'hello@andrewjmacdonald.ca';
-        $('#email-address-val').html('<a href="' + addr  + '">' + addr + '</a>');
+        $('#email-address-val').html('<a href="mailto:' + addr  + '">' + addr + '</a>');
         $('#email-address-box').show();
     });
 
