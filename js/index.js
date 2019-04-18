@@ -17,9 +17,36 @@ $(document).ready(function () {
         }, 500);
     });*/
 
+    function isNightMode() {
+        var nightMode = window.localStorage.getItem('nightmode');
+        return nightMode && nightMode == '1';
+    }
+
+    function updateNightMode() {
+        var $nightModeBtn = $('#night-mode-btn');
+
+        if (isNightMode()) {
+            $nightModeBtn.html('<i class="fas fa-sun" ></i> Day Mode');
+            jQuery('body').addClass('dark');
+        } else {
+            $nightModeBtn.html('<i class="fas fa-moon" ></i> Night Mode');
+            jQuery('body').removeClass('dark');
+        }
+
+        
+    }
+
+    updateNightMode();
+
+    $('#night-mode-btn').click(function () {
+        window.localStorage.setItem('nightmode', Number(!isNightMode()).toString());
+        updateNightMode();
+    });
+
 
     $('#send-email-link').click(function () {
-        $('#email-address-val').html('hello@andrewjmacdonald.ca');
+        var addr = 'hello@andrewjmacdonald.ca';
+        $('#email-address-val').html('<a href="' + addr  + '">' + addr + '</a>');
         $('#email-address-box').show();
     });
 
