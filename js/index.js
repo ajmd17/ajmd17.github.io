@@ -17,30 +17,29 @@ $(document).ready(function () {
         }, 500);
     });*/
 
-    function isNightMode() {
-        var nightMode = window.localStorage.getItem('nightmode');
-        return nightMode && nightMode == '1';
+    function isNightTime() {
+        var hours = new Date().getHours();
+        return !(hours > 6 && hours < 20);
     }
 
-    function updateNightMode() {
-        var $nightModeBtn = $('#night-mode-btn');
+    var $nightModeBtn = $('#night-mode-btn');
 
-        if (isNightMode()) {
-            $nightModeBtn.html('<i class="fas fa-sun" ></i> Day Mode');
-            jQuery('body').addClass('dark');
-        } else {
+    if (isNightTime()) {
+        $nightModeBtn.html('<i class="fas fa-sun" ></i> Day Mode');
+        jQuery('body').addClass('dark');
+    } else {
+        $nightModeBtn.html('<i class="fas fa-moon" ></i> Night Mode');
+        jQuery('body').removeClass('dark');
+    }
+
+    $nightModeBtn.click(function () {
+        if (jQuery('body').hasClass('dark')) {
             $nightModeBtn.html('<i class="fas fa-moon" ></i> Night Mode');
             jQuery('body').removeClass('dark');
+        } else {
+            $nightModeBtn.html('<i class="fas fa-sun" ></i> Day Mode');
+            jQuery('body').addClass('dark');
         }
-
-        
-    }
-
-    updateNightMode();
-
-    $('#night-mode-btn').click(function () {
-        window.localStorage.setItem('nightmode', Number(!isNightMode()).toString());
-        updateNightMode();
     });
 
 
