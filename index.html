@@ -2,105 +2,156 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/cards.css">
+        <!-- <link rel="stylesheet" href="css/cards.css"> -->
+
+        <script src="js/data.js" type="text/javascript"></script>
     </head>
 
     <body>
 
         <div id="main-body-wrapper">
-            
-            <div id="night-mode-wrapper">
-                <button id="night-mode-btn"></button>
-            </div>
 
             <div class="page" id="about">
-                <div class="top-bar-wrapper">
-                    <div class="top-bar">
+                <!-- <div class="top-bar-wrapper">
+                    <div class="top-bar name-header">
                         <h1>Andrew J. MacDonald</h1>
                     </div>
-                </div>
+                </div> -->
                 <div class="page-content">
+
+
                     <div class="page-content-inner">
-                        <p class="intro-text">
-                            I'm a software developer from Sydney, NS, Canada.<br>
-                            Programming has been my passion since a young age, and has been an outlet for my ideas.<br>
-                            Here you'll find some of my favourite projects I've worked on.
-                        </p>
-
-                        <div class="profile-links">
-                            <div class="profile-link">
-                                <img src="/img/github.png">
-                                <a href="https://github.com/ajmd17" target="_blank">
-                                    View my GitHub profile
-                                </a>
-                            </div>
-                            <div class="profile-link">
-                                <img src="/img/email.png">
-                                <a id="send-email-link" href="#">
-                                    Send me an email
-                                </a>
+                        
+                        <div class="about">
+                            <div class="header">
+                                
+                                <div class="avatar-wrapper">
+                                    <img class="avatar" src="img/me.jpg" >
+                                </div>
+                                <h1>Andrew MacDonald</h1>
                             </div>
 
-                            <div id="email-address-box" style="display: none">
-                                You can send an email to me personally at:
-                                <div id="email-address-val"></div>
-                                <a id="close-email-box" href="#">
-                                    Close
-                                </a>
+                            <p class="intro-text">
+                                Andrew MacDonald is a full-stack developer, currently living in Halifax, Nova Scotia.<br/><br/>
+                                Software is an outlet for ideas.
+                            </p>
+
+                            <div class="profile-links">
+                                <div class="profile-link">
+                                    <a href="https://github.com/ajmd17" target="_blank">
+                                        <img src="/img/github.png">
+                                    </a>
+                                </div>
+                                <div class="profile-link">
+                                    <a href="https://www.linkedin.com/in/andrew-macdonald-136b05110/" target="_blank">
+                                        <img src="/img/linkedin.png">
+                                    </a>
+                                </div>
+                                <div class="profile-link">
+                                    <a id="send-email-link" href="#">
+                                        <img src="/img/email.png">
+                                    </a>
+                                </div>
+
+                                <div id="email-address-box" style="display: none">
+                                    You can send an email to me personally at:
+                                    <div id="email-address-val"></div>
+                                    <a id="close-email-box" href="#">
+                                        Close
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
-                        <hr>
+                        <div class="card">
+                            <div class="title">Skills and Interests</div>
+                            <ul class="skills">
+                                <li>JavaScript</li>
+                                <li>Ruby on Rails</li>
+                                <li>React.js</li>
+                                <li>TypeScript</li>
+                                <li>AWS</li>
+                                <li>C++</li>
+                                <li>C</li>
+                                <li>Git</li>
+                                <li>Programming Language Design</li>
+                            </ul>
+                        </div>
 
-                        <ul class="occupations">
-                            <li>
-                                <img src="img/portfolio-items/vennio.png" style="display:none"></img>
-                                <div class="project-title">
-                                    <h3>
-                                        Securicy
-                                    </h3>
-                                    <small>
-                                        <a href="https://www.securicy.com">
-                                            https://www.securicy.com
-                                        </a>
-                                    </small>
-                                </div>
-                                <p class="description">
-                                    Software Developer
-                                </p>
-                                <p class="description">
-                                    May 2019 / --
-                                </p>
-                            </li>
-                            <li>
-                                <img src="img/portfolio-items/vennio.png" style="display:none"></img>
-                                <div class="project-title">
-                                    <h3>
-                                        Marcato Digital Solutions
-                                    </h3>
-                                    <small>
-                                        <a href="https://marcatofestival.com">
-                                            https://marcatofestival.com
-                                        </a>
-                                    </small>
-                                </div>
-                                <p class="description">
-                                    Software Developer
-                                </p>
-                                <p class="description">
-                                    Jun 2017 / March 2019
-                                </p>
-                            </li>
-                        </ul>
+                        <div class="card">
+                            <div class="title">Occupations</div>
+                            <ul class="occupations">
+                                <li>
+                                    <img src="img/portfolio-items/vennio.png" style="display:none"></img>
+                                    <div class="project-title">
+                                        <h3>
+                                            Securicy Data Solutions
+                                        </h3>
+                                        <small>
+                                            <a href="https://www.securicy.com">
+                                                https://www.securicy.com
+                                            </a>
+                                        </small>
+                                    </div>
+                                    <p class="description">
+                                        Software Developer
+                                    </p>
+                                    <p class="description">
+                                        May 2019 / --
+                                    </p>
+                                </li>
+                                <li>
+                                    <img src="img/portfolio-items/vennio.png" style="display:none"></img>
+                                    <div class="project-title">
+                                        <h3>
+                                            Marcato Digital Solutions
+                                        </h3>
+                                        <small>
+                                            <a href="https://marcatofestival.com">
+                                                https://marcatofestival.com
+                                            </a>
+                                        </small>
+                                    </div>
+                                    <p class="description">
+                                        Software Developer
+                                    </p>
+                                    <p class="description">
+                                        Jun 2017 / March 2019
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
 
                     </div>
                 </div>
             </div>
 
             <div class="page half" id="projects">
+                <div class="top-bar-wrapper">
+                    <div class="top-bar">
+                        <h3>Articles</h3>
+                    </div>
+                    <div class="page-content">
+                        <div id="articles-container" class="page-content-inner">
+                            <div class="project-circle small">
+                                <div class="project-header">
+                                    <div class="project-title">
+                                        <a href="https://codeburst.io/how-i-built-my-own-react-in-two-days-and-why-i-did-it-969c3d048f78" target="_blank">
+                                            How I Built My Own &ldquo;React&rdquo; in Two Days &dash; and Why I Did It
+                                        </a>
+                                    </div>
+                                    <span class="description italic">
+                                        Let&rsquo;s talk about reinventing the wheel. A major philosophy I have always believed in is learning as much as you can about the ins and outs of ... <a href="https://codeburst.io/how-i-built-my-own-react-in-two-days-and-why-i-did-it-969c3d048f78" target="_blank">Read more</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="top-bar-wrapper">
                     <div class="top-bar">
@@ -108,130 +159,8 @@
                     </div>
                 </div>
                 <div class="page-content">
-                    <div class="page-content-inner">
-                        
-                        <div class="project-circle">
-                            <img src="img/portfolio-items/bidsquid.png"></img>
-                            <div class="project-title">
-                                <h3>
-                                    BidSquid Online Marketplace
-                                </h3>
-                            </div>
-                            <span class="description">
-                                Online marketplace to connect buyers and sellers of agricultural goods
-                            </span>
-
-                            <div class="links">
-                                <a href="https://bidsquid.com" target="_blank">View Page</a>
-                            </div>
-                        </div>
-                    
-                    
-                        <div class="project-circle">
-                            <img src="https://getreal.band/images/releases/am1.jpg"></img>
-                            <div class="project-title">
-                                <h3>
-                                    Get Real! Band
-                                </h3>
-                            </div>
-                            <span class="description">
-                                A website with a blog, audio player, events and more for my band, <strong>Get Real!</strong>
-                            </span>
-
-                            <div class="links">
-                                <a href="https://getreal.band" target="_blank">View Page</a>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="project-circle">
-                            <img src="img/portfolio-items/acelang.png"></img>
-                            <div class="project-title">
-                                <h3>Ace Programming Language</h3>
-                            </div>
-                            <span class="description">
-                                A dynamic programming language with a VM, created from scratch in C++.
-                            </span>
-                            <div class="links">
-                                <a target="_blank" href="http://github.com/ajmd17/ace-lang">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-circle">
-                            <img src="img/portfolio-items/vennio.png"></img>
-                            <div class="project-title">
-                                <h3>
-                                    Vennio Project Manager
-                                </h3>
-                            </div>
-                            <span class="description">
-                                A different take on project management.<br>
-                                Focus on the visual components of a project.
-                            </span>
-
-                            <div class="links">
-                                <a href="https://ajmd17.github.io/vennio" target="_blank">View Page</a>
-                                <a target="_blank" href="http://github.com/ajmd17/vennio">GitHub</a>
-                            </div>
-                        </div>
-                        
-                        <div class="project-circle">
-                            <img src="img/portfolio-items/ytroom.png"></img>
-                            <div class="project-title">
-                                <h3>
-                                    YTRoom
-                                </h3>
-                            </div>
-                            <span class="description">
-                                Watch videos with others in sync.
-                            </span>
-                            <div class="links">
-                                <a href="https://ajmd17.github.io/YTRoom" target="_blank">View Page</a>
-                                <a target="_blank" href="http://github.com/ajmd17/ytroom">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-circle">
-                            <img src="img/portfolio-items/apex3d.png"></img>
-                            <div class="project-title">
-                                <h3>Apex3D Game Engine</h3>
-                            </div>
-                            <span class="description">
-                                OpenGL game engine written in C++.<br>
-                                Originally written in C#, as well as Java at one point!
-                            </span>
-                            <div class="links">
-                                <a target="_blank" href="http://github.com/ajmd17/apex-engine">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-circle">
-                            <img src="img/portfolio-items/tangos.png"></img>
-                            <div class="project-title">
-                                <h3>
-                                    Tangerine Operating System
-                                </h3>
-                            </div>
-                            <span class="description">
-                                A 32-bit operating system written in C, created from scratch with my brother.
-                            </span>
-                            <div class="links">
-                                <a target="_blank" href="https://github.com/ajmd17/TangOS">GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-circle" style="display:none;">
-                            <img src="img/portfolio-items/tweetographics.png"></img>
-                            <div class="project-title">
-                                <h3>
-                                    Tweetographics
-                                </h3>
-                            </div>
-                            <span class="description">
-                                See a visual representation of where people are tweeting about anything.
-                            </span>
-                            <div class="links">
-                                <a href="http://tweeto.graphics/" target="_blank">View Page</a>
-                                <a target="_blank" href="http://github.com/ajmd17/tweetographics">GitHub</a>
-                            </div>
-                        </div>
+                    <div id="portfolio-container" class="page-content-inner">
+                        Loading portfolio items...
                     </div>
                 </div>
             </div>
@@ -262,7 +191,7 @@
         </div>
 
         <script src="js/external/jquery.min.js"></script>
-        <script src="js/cards.js"></script>
+        <!-- <script src="js/cards.js"></script> -->
         <script src="js/index.js"></script>
     </body>
 </html>
