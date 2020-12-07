@@ -73,23 +73,23 @@ $(document).ready(function () {
 
     var $nightModeBtn = $('#night-mode-btn');
 
-    if (isNightTime()) {
-        $nightModeBtn.html('<i class="fas fa-sun" ></i>');
-        jQuery('body').addClass('dark');
-    } else {
-        $nightModeBtn.html('<i class="fas fa-moon" ></i>');
-        jQuery('body').removeClass('dark');
-    }
+    // if (isNightTime()) {
+    //     $nightModeBtn.html('<i class="fas fa-sun" ></i>');
+    //     jQuery('body').addClass('dark');
+    // } else {
+    //     $nightModeBtn.html('<i class="fas fa-moon" ></i>');
+    //     jQuery('body').removeClass('dark');
+    // }
 
-    $nightModeBtn.click(function () {
-        if (jQuery('body').hasClass('dark')) {
-            $nightModeBtn.html('<i class="fas fa-moon" ></i>');
-            jQuery('body').removeClass('dark');
-        } else {
-            $nightModeBtn.html('<i class="fas fa-sun" ></i>');
-            jQuery('body').addClass('dark');
-        }
-    });
+    // $nightModeBtn.click(function () {
+    //     if (jQuery('body').hasClass('dark')) {
+    //         $nightModeBtn.html('<i class="fas fa-moon" ></i>');
+    //         jQuery('body').removeClass('dark');
+    //     } else {
+    //         $nightModeBtn.html('<i class="fas fa-sun" ></i>');
+    //         jQuery('body').addClass('dark');
+    //     }
+    // });
 
 
     $('#send-email-link').click(function (e) {
