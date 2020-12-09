@@ -3,11 +3,11 @@ var PORTFOLIO_DATA = {
   projects: [{
     title: 'Bandpageapp.com',
     description: 'Crowdfunding platform for musicians',
-    img: ['bandpage_1.png', 'bandpage_2.png', 'bandpage_3.png']
+    img: ['bandpage_1.jpg', 'bandpage_2.jpg', 'bandpage_3.jpg']
   }, {
     title: 'Get Real!',
     description: 'A website with a blog, audio player, events and merch for my band. All content powered by markdown.',
-    img: ['getreal_1.png'],
+    img: ['getreal_1.jpg'],
     links: [{
       name: 'View Page',
       main: true,
@@ -16,7 +16,7 @@ var PORTFOLIO_DATA = {
   }, {
     title: 'BidSquid Online Marketplace',
     description: 'Online marketplace to connect buyers and sellers of agricultural goods',
-    img: ['bidsquid_1.png', 'bidsquid_2.png', 'bidsquid_3.png'],
+    img: ['bidsquid_1.jpg', 'bidsquid_2.jpg', 'bidsquid_3.jpg'],
     links: [{
       name: 'View Page',
       main: true,
@@ -33,7 +33,7 @@ var PORTFOLIO_DATA = {
   }, {
     title: 'BlockML - HTML Component Language',
     description: 'Makes writing HTML feel more consistent with the way we write JavaScript and CSS.',
-    img: ['blockml_1.png'],
+    img: ['blockml_1.jpg'],
     links: [{
       name: 'GitHub',
       href: 'https://github.com/ajmd17/blockml'
@@ -75,8 +75,8 @@ var PORTFOLIO_DATA = {
     }]
   }, {
     title: 'Apex3D Game Engine',
-    small: true,
     description: 'OpenGL game engine written in C++.',
+    img: ['apex.jpg'],
     links: [{
       name: 'GitHub',
       href: 'http://github.com/ajmd17/apex-engine'
