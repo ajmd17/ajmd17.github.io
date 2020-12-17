@@ -199,29 +199,20 @@ function addEscKeyListener() {
     })
 }
 
+function weatherAppRedirect() {
+    if (location.hash === '#weather-app') {
+        location.href = 'http://ec2-54-208-198-60.compute-1.amazonaws.com:5000/'
+    }
+}
+
 $(document).ready(function () {
     addEscKeyListener()
     buildPortfolioItems()
 
+    weatherAppRedirect()
+
     previewModalInstance.bindEvents()
 
-    /*$('#about-link').click(function () {
-        $('html, body').animate({
-            scrollTop: $('#about').offset().top - $('#top-bar-wrapper').height()
-        }, 500);
-    });
-
-    $('#projects-link').click(function () {
-        $('html, body').animate({
-            scrollTop: $('#projects').offset().top - $('#top-bar-wrapper').height()
-        }, 500);
-    });
-
-    $('#contact-link').click(function () {
-        $('html, body').animate({
-            scrollTop: $('#contact').offset().top - $('#top-bar-wrapper').height()
-        }, 500);
-    });*/
 
     function isNightTime() {
         var hours = new Date().getHours();
