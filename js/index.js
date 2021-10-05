@@ -199,9 +199,9 @@ function addEscKeyListener() {
     })
 }
 
-function weatherAppRedirect() {
-    if (location.hash === '#weather-app') {
-        location.href = 'http://ec2-54-208-198-60.compute-1.amazonaws.com:5000/'
+function webCrawlerRedirect() {
+    if (location.hash === '#web-crawler') {
+        location.href = 'http://ec2-18-233-160-17.compute-1.amazonaws.com:8080'
     }
 }
 
@@ -209,7 +209,7 @@ $(document).ready(function () {
     addEscKeyListener()
     buildPortfolioItems()
 
-    weatherAppRedirect()
+    webCrawlerRedirect()
 
     previewModalInstance.bindEvents()
 
