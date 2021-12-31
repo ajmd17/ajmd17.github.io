@@ -40,6 +40,14 @@ var PORTFOLIO_DATA = {
     description: 'Crowdfunding platform for musicians',
     img: ['bandpage_1.jpg', 'bandpage_2.jpg', 'bandpage_3.jpg']
   }, {
+    title: 'Apex3D Game Engine',
+    description: 'OpenGL game engine written in C++.',
+    img: ['apex.jpg'],
+    links: [{
+      name: 'GitHub',
+      href: 'http://github.com/ajmd17/apex-engine'
+    }]
+  }, {
     title: 'BlockML - HTML Component Language',
     description: 'Makes writing HTML feel more consistent with the way we write JavaScript and CSS.',
     img: ['blockml_1.jpg'],
@@ -97,14 +105,6 @@ var PORTFOLIO_DATA = {
     }, {
       name: 'GitHub',
       href: 'http://github.com/ajmd17/ytroom'
-    }]
-  }, {
-    title: 'Apex3D Game Engine',
-    description: 'OpenGL game engine written in C++.',
-    img: ['apex.jpg'],
-    links: [{
-      name: 'GitHub',
-      href: 'http://github.com/ajmd17/apex-engine'
     }]
   }]
 }
