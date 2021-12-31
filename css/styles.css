@@ -338,7 +338,7 @@ body.dark .card .title {
     color: #1A9FBD;
     display: inline-block;
     padding: 4px 10px;
-    margin: 3px 5px;
+    margin: 3px;
 }
 
 .page {
@@ -405,7 +405,7 @@ body.dark .page#about {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     border-radius: 3px;
     margin-bottom: 15px;
-    padding: 15px;
+    padding: 10px 15px;
     background-color: #fff;
     overflow: auto;
 }
@@ -414,27 +414,45 @@ body.dark .project-circle {
 }
 .project-circle .project-title {
     font-size: 0.8em;
-    display: inline-block;
-    margin-right: 8px;
+    display: flex;
+    /* margin-right: 8px; */
+    margin-bottom: 2px;
+    align-items: center;
+    justify-content: space-between;
 }
-.project-circle.small {
+.project-circle .project-title .tags {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-circle .project-title .tags .tag {
+    border-radius: 12px;
+    background: #E9F5F7;
+    border: 1px solid #C2E3F2;
+    font-size: 11px;
+    color: #1A9FBD;
+    display: inline-block;
+    padding: 2px 5px;
+    margin: 0px 3px;
+}
+/* .project-circle.small {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 .project-circle.small .project-header {
     flex: 1;
 }
 .project-circle.small .project-title {
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 0.7em;
-    margin-right: 8px;
+    /* margin-right: 8px; */
 }
 .project-circle.small .links {
-    display: flex;
+    /* display: flex;
     align-items: center;
     padding-left: 5px;
-    margin: 0;
+    margin: 0; */
     font-size: 0.7em;
 }
 .project-circle .project-title h3 {
@@ -450,15 +468,16 @@ body.dark .project-circle {
 .project-circle .links {
     font-size: 0.8em;
     display: flex;
+    margin-bottom: 2px;
 }
 .project-circle .links a {
     margin-right: 20px;
 }
-.project-circle.small .description {
+/* .project-circle.small .description {
     display: inline;
     font-size: 0.6em;
     color: #555;
-}
+} */
 body.dark .project-circle {
     border-color: #555;
 }
@@ -473,7 +492,7 @@ body.dark .project-circle {
     margin: 0;
 }
 .project-circle > .links {
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .project-circle ul {

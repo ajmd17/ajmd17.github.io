@@ -134,15 +134,28 @@ function buildPortfolioItem(item) {
 
     let itemTitle = item.title
 
-    if ('links' in item) {
-        let mainLink = item.links.find((link) => link.main)
+    // if ('links' in item) {
+    //     let mainLink = item.links.find((link) => link.main)
 
-        if (mainLink) {
-            itemTitle = `<a href="${mainLink.href}" target="_blank">${item.title}</a>`
-        }
+    //     if (mainLink) {
+    //         itemTitle = `<a href="${mainLink.href}" target="_blank">${item.title}</a>`
+    //     }
+    // }
+
+    const $projectTitle = $('<div class="project-title">')
+    $projectTitle.append(`<h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3>`)
+
+    if ('tags' in item && item.tags.length) {
+        const $tags = $('<div class="tags">')
+
+        item.tags.forEach((tag) => {
+            $tags.append(`<div class="tag">${tag}</div>`)
+        })
+
+        $projectTitle.append($tags)
     }
 
-    $header.append(`<div class="project-title"><h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3></div>`)
+    $header.append($projectTitle)
     $header.append(`<span class="description">${renderLinksAsHtml(item.description)}</span>`)
 
     $card.append($header)
@@ -165,10 +178,6 @@ function buildPortfolioItem(item) {
         const $links = $(`<div class="links"></div>`)
 
         for (let link of item.links) {
-            if (link.main) {
-                continue
-            }
-
             $links.append(`<a href="${link.href}" target="_blank">${link.name}</a>`)
         }
 
