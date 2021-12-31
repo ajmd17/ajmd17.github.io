@@ -147,15 +147,22 @@ body.dark .top-bar {
 
 .avatar-wrapper {
     display: flex;
-    /* align-items: center; */
+    align-items: flex-end;
+    justify-content: center;
+    border: 5px solid #eee;
+    border-radius: 50%;
+
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); */
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+    overflow: hidden;
 }
 
 .avatar {
-    border-radius: 50%;
-    border: 5px solid #DE2A3F;
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
+    /* border-radius: 50%; */
+    width: 90px;
+    height: 90px;
 }
 
 
@@ -370,6 +377,7 @@ body.dark .card .title {
 }
 #about h1 {
     margin: 0;
+    flex: 0;
 }
 
 .page .center {
