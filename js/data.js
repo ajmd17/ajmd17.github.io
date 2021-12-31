@@ -1,21 +1,8 @@
 var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
-    title: 'Bandpageapp.com',
-    description: 'Crowdfunding platform for musicians',
-    img: ['bandpage_1.jpg', 'bandpage_2.jpg', 'bandpage_3.jpg']
-  }, {
-    title: 'Get Real!',
-    description: 'A website with a blog, audio player, events and merch for my band. All content powered by markdown.',
-    img: ['getreal_1.jpg'],
-    links: [{
-      name: 'View Page',
-      main: true,
-      href: 'https://getreal.band'
-    }]
-  }, {
     title: 'BidSquid Online Marketplace',
-    description: 'Online marketplace to connect buyers and sellers of agricultural goods',
+    description: 'Online marketplace to connect buyers and sellers of agricultural goods. Includes a backend system for managing inventory and a procurement system. Read more: https://entrevestor.com/home/entry/hachey-traded-wall-street-for-agtech',
     img: ['bidsquid_1.jpg', 'bidsquid_2.jpg', 'bidsquid_3.jpg'],
     links: [{
       name: 'View Page',
@@ -23,13 +10,35 @@ var PORTFOLIO_DATA = {
       href: 'https://bidsquid.com'
     }]
   }, {
-    title: 'Lyric video editor',
-    small: true,
-    description: 'Allows you to build simple lyric videos for songs and then render it into an mp4. Custom video effects may be created programmatically.',
+    title: 'Lyric Video Editor',
+    description: 'A tool for building lyric videos, with a complex plugin system. I used this to make my own lyric videos.',
+    img: ['lyric_video_editor.jpg'],
     links: [{
       name: 'GitHub',
+      main: true,
       href: 'https://github.com/ajmd17/lyric-video-editor'
     }]
+  },{
+    title: 'Get Real!',
+    description: 'A website with a blog, audio player, events and merch for my band. All content is written in an extended form of markdown using a custom system.',
+    img: ['getreal_1.jpg'],
+    links: [{
+      name: 'View Page',
+      main: true,
+      href: 'https://getreal.band'
+    }]
+  }, {
+    title: 'Celtic Colours app',
+    description: 'Provides scheduling and event details for the Celtic Colours festival in Cape Breton. Contracted to work on this with Novastream.',
+    links: [{
+      name: 'GitHub',
+      main: true,
+      href: 'https://github.com/ajamiesonfraser/celticcoloursapp'
+    }]
+  }, {
+    title: 'Bandpageapp.com',
+    description: 'Crowdfunding platform for musicians',
+    img: ['bandpage_1.jpg', 'bandpage_2.jpg', 'bandpage_3.jpg']
   }, {
     title: 'BlockML - HTML Component Language',
     description: 'Makes writing HTML feel more consistent with the way we write JavaScript and CSS.',
@@ -40,6 +49,22 @@ var PORTFOLIO_DATA = {
     }, {
       name: 'GitHub (blockml-component)',
       href: 'https://github.com/ajmd17/blockml-component'
+    }]
+  }, {
+    title: 'auto-clockify',
+    small: true,
+    description: 'A tool for automatically clocking worked hours based on git branches',
+    links: [{
+      name: 'GitHub',
+      href: 'https://github.com/ajmd17/auto-clockify'
+    }]
+  }, {
+    title: 'CoinTrends',
+    small: true,
+    description: 'Cryptocurrency price analysis toolkit with an extensive plugin system',
+    links: [{
+      name: 'GitHub',
+      href: 'https://github.com/ajmd17/cointrends'
     }]
   }, {
     title: 'Vennio Project Manager',

@@ -111,6 +111,18 @@ const previewModalInstance = new class PreviewModal {
     }
 }
 
+/** @param {string} text */
+function renderLinksAsHtml(text) {
+    const patterns = [
+        [/(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim, '<a href="$1" target="_blank">$1</a>'],
+        [/(^|[^\/])(www\.[\S]+(\b|$))/gim,'$1<a href="http://$2" target="_blank">$2</a>']
+    ]
+
+    return patterns.reduce((previousValue, currentValue) => {
+        return previousValue.replace(currentValue[0], currentValue[1])
+    }, text)
+}
+
 function buildPortfolioItem(item) {
     const $card = $('<div class="project-circle"></div>')
 
@@ -131,7 +143,7 @@ function buildPortfolioItem(item) {
     }
 
     $header.append(`<div class="project-title"><h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3></div>`)
-    $header.append(`<span class="description">${item.description}</span>`)
+    $header.append(`<span class="description">${renderLinksAsHtml(item.description)}</span>`)
 
     $card.append($header)
 
@@ -199,17 +211,9 @@ function addEscKeyListener() {
     })
 }
 
-function webCrawlerRedirect() {
-    if (location.hash === '#web-crawler') {
-        location.href = 'http://ec2-18-233-160-17.compute-1.amazonaws.com:8080'
-    }
-}
-
 $(document).ready(function () {
     addEscKeyListener()
     buildPortfolioItems()
-
-    webCrawlerRedirect()
 
     previewModalInstance.bindEvents()
 
