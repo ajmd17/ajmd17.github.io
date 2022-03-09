@@ -1,6 +1,17 @@
 var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
+  title: 'Hyperion Engine',
+  description: '3D game engine written from scratch, using Vulkan and OpenGL as a backend',
+
+  img: ['hyperion_1.png', 'hyperion_2.png'],
+  links: [{
+      name: 'GitHub',
+      href: 'http://github.com/krait-games/hyperion-engine'
+  }]
+
+},
+{
     title: 'BidSquid Online Marketplace',
     tags: ['Node.js', 'TypeScript', 'React', 'MongoDB'],
     description: 'Online marketplace to connect buyers and sellers of agricultural goods. Includes a backend system for managing inventory and a procurement system. Read more: https://entrevestor.com/home/entry/hachey-traded-wall-street-for-agtech',
