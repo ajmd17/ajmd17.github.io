@@ -4,7 +4,7 @@ var PORTFOLIO_DATA = {
   title: 'Hyperion Engine',
   description: '3D game engine written from scratch, using Vulkan and OpenGL as a backend',
 
-  img: ['hyperion_1.png', 'hyperion_2.png'],
+  img: ['screenshot71.png', 'screenshot65.png'],
   links: [{
       name: 'GitHub',
       href: 'http://github.com/krait-games/hyperion-engine'
