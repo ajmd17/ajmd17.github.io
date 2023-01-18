@@ -67,7 +67,7 @@ var PORTFOLIO_DATA = {
       links: [{
         name: 'GitHub',
         main: true,
-        href: 'https://github.com/ajamiesonfraser/celticcoloursapp'
+        href: 'https://github.com/ajamiesonfraser/celticcoloursapp/tree/andrew'
       }]
     }, {
       title: 'BlockML - Component Language',
