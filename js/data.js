@@ -2,7 +2,7 @@ var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
     title: 'Hyperion GameEngine',
-    description: 'Powerful 3D game engine written in C++17, rendering on Vulkan. This is probably my 7th game engine, but I lost count...',
+    description: 'Powerful 3D game engine written in C++17, rendering on Vulkan. Includes 4 global illumination techniques, ray tracing support, screen space reflections, PBR, temporal AA, HBAO.',
 
     img: ['hyp1.png'],
     links: [{
@@ -10,6 +10,15 @@ var PORTFOLIO_DATA = {
         href: 'http://github.com/krait-games/hyperion-engine'
     }]
 
+  }, {
+    title: 'Apex3D Game Engine',
+    tags: ['Game Engine', 'C++', 'OpenGL'],
+    description: 'OpenGL game engine written in C++. One of my earlier game engines.',
+    img: ['scout_trooper.PNG'],
+    links: [{
+      name: 'GitHub',
+      href: 'http://github.com/ajmd17/apex-engine'
+    }]
   },{
     title: 'TangOS',
     description: 'A small operating system written in C because why not?',
@@ -20,16 +29,6 @@ var PORTFOLIO_DATA = {
         href: 'https://github.com/ajmd17/TangOS'
     }]
 
-  },
-  {
-    title: 'Apex3D Game Engine',
-    tags: ['Game Engine', 'C++', 'OpenGL'],
-    description: 'OpenGL game engine written in C++. One of my earlier game engines.',
-    img: ['scout_trooper.PNG'],
-    links: [{
-      name: 'GitHub',
-      href: 'http://github.com/ajmd17/apex-engine'
-    }]
   },
   {
       title: 'BidSquid Online Marketplace',
