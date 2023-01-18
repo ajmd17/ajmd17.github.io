@@ -2,7 +2,7 @@ var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
     title: 'Hyperion GameEngine',
-    description: 'Powerful 3D game engine written in C++17, rendering on Vulkan.',
+    description: 'Powerful 3D game engine written in C++17, rendering on Vulkan. This is probably my 7th game engine, but I lost count...',
 
     img: ['hyp1.png'],
     links: [{
@@ -44,8 +44,8 @@ var PORTFOLIO_DATA = {
     }, {
       title: 'Apex3D Game Engine',
       tags: ['Game Engine', 'C++', 'OpenGL'],
-      description: 'OpenGL game engine written in C++.',
-      img: ['apex.jpg', 'world_terrain.PNG', 'reflections2.PNG', 'scout_trooper.PNG'],
+      description: 'OpenGL game engine written in C++. One of my earlier game engines.',
+      img: ['scout_trooper.PNG'],
       links: [{
         name: 'GitHub',
         href: 'http://github.com/ajmd17/apex-engine'
