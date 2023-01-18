@@ -12,7 +12,7 @@ var PORTFOLIO_DATA = {
 
   },{
     title: 'TangOS',
-    description: 'A small operating system written in C for the fun of it.',
+    description: 'A small operating system written in C because why not?',
 
     img: ['tangos.png'],
     links: [{
@@ -20,6 +20,16 @@ var PORTFOLIO_DATA = {
         href: 'https://github.com/ajmd17/TangOS'
     }]
 
+  },
+  {
+    title: 'Apex3D Game Engine',
+    tags: ['Game Engine', 'C++', 'OpenGL'],
+    description: 'OpenGL game engine written in C++. One of my earlier game engines.',
+    img: ['scout_trooper.PNG'],
+    links: [{
+      name: 'GitHub',
+      href: 'http://github.com/ajmd17/apex-engine'
+    }]
   },
   {
       title: 'BidSquid Online Marketplace',
@@ -40,15 +50,6 @@ var PORTFOLIO_DATA = {
         name: 'Visit Site',
         main: true,
         href: 'https://getreal.band'
-      }]
-    }, {
-      title: 'Apex3D Game Engine',
-      tags: ['Game Engine', 'C++', 'OpenGL'],
-      description: 'OpenGL game engine written in C++. One of my earlier game engines.',
-      img: ['scout_trooper.PNG'],
-      links: [{
-        name: 'GitHub',
-        href: 'http://github.com/ajmd17/apex-engine'
       }]
     }, {
       title: 'Lyric Video Editor',
