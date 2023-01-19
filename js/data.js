@@ -4,7 +4,7 @@ var PORTFOLIO_DATA = {
     title: 'Hyperion Game Engine',
     description: 'Powerful 3D game engine written in C++17, rendering on Vulkan. Includes 4 global illumination techniques, ray tracing support, screen space reflections, PBR, temporal AA, HBAO.',
 
-    img: ['hyp1.png'],
+    img: ['hyp-2.jpeg', 'hyp-3.jpeg'],
     links: [{
         name: 'GitHub',
         href: 'http://github.com/krait-games/hyperion-engine'
