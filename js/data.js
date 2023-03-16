@@ -9,7 +9,17 @@ var PORTFOLIO_DATA = {
         name: 'GitHub',
         href: 'http://github.com/krait-games/hyperion-engine'
     }]
-
+  },
+  {
+    title: 'BidSquid Online Marketplace',
+    tags: ['Node.js', 'TypeScript', 'React', 'MongoDB'],
+    description: 'Online marketplace to connect buyers and sellers of agricultural goods. Includes a backend system for managing inventory and a procurement system. Read more: https://entrevestor.com/home/entry/hachey-traded-wall-street-for-agtech',
+    img: ['bidsquid_1.jpg', 'bidsquid_2.jpg', 'bidsquid_3.jpg'],
+    links: [{
+      name: 'Visit Site',
+      main: true,
+      href: 'https://bidsquid.com'
+    }]
   }, {
     title: 'Apex3D Game Engine',
     tags: ['Game Engine', 'C++', 'OpenGL'],
@@ -29,18 +39,7 @@ var PORTFOLIO_DATA = {
         href: 'https://github.com/ajmd17/TangOS'
     }]
 
-  },
-  {
-      title: 'BidSquid Online Marketplace',
-      tags: ['Node.js', 'TypeScript', 'React', 'MongoDB'],
-      description: 'Online marketplace to connect buyers and sellers of agricultural goods. Includes a backend system for managing inventory and a procurement system. Read more: https://entrevestor.com/home/entry/hachey-traded-wall-street-for-agtech',
-      img: ['bidsquid_1.jpg', 'bidsquid_2.jpg', 'bidsquid_3.jpg'],
-      links: [{
-        name: 'Visit Site',
-        main: true,
-        href: 'https://bidsquid.com'
-      }]
-    }, {
+  }, {
       title: 'Get Real!',
       tags: ['Node.js', 'JavaScript'],
       description: 'A website with a blog, audio player, events and merch for my band. All content is written in an extended form of markdown using a custom system.',
