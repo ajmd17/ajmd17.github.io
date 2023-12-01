@@ -237,7 +237,7 @@ $(document).ready(function () {
 
     $('#send-email-link').click(function (e) {
         console.log(e)
-        var addr = 'hello@andrewjmacdonald.ca';
+        var addr = 'andrewmacdonald971@gmail.com';
         $('#email-address-val').html('<a href="mailto:' + addr  + '">' + addr + '</a>');
         $('#email-address-box').show();
     });
