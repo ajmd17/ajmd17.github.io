@@ -11,7 +11,7 @@ function memoize(method) {
             let keys = keyArray[i],
                 matches = true
 
-                
+
             if (keys.length != args.length) {
                 continue
             }
@@ -238,7 +238,7 @@ $(document).ready(function () {
 
     $('#send-email-link').click(function (e) {
         console.log(e)
-        var addr = 'andrewmacdonald971@gmail.com';
+        var addr = 'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.ca';
         $('#email-address-val').html('<a href="mailto:' + addr  + '">' + addr + '</a>');
         $('#email-address-box').show();
     });
