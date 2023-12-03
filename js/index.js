@@ -227,13 +227,30 @@ $(document).ready(function () {
 
     previewModalInstance.bindEvents()
 
+    var $nightModeBtn = $('#night-mode-btn');
 
-    function isNightTime() {
-        var hours = new Date().getHours();
-        return !(hours > 6 && hours < 20);
+
+    function isDarkModeEnabled() {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
-    var $nightModeBtn = $('#night-mode-btn');
+    if (isDarkModeEnabled()) {
+        jQuery('body').addClass('dark');
+        $nightModeBtn.html('<i class="fas fa-sun" ></i>');
+    } else {
+        jQuery('body').removeClass('dark');
+        $nightModeBtn.html('<i class="fas fa-moon" ></i>');
+    }
+
+    $nightModeBtn.click(function () {
+        if (jQuery('body').hasClass('dark')) {
+            $nightModeBtn.html('<i class="fas fa-moon" ></i>');
+            jQuery('body').removeClass('dark');
+        } else {
+            $nightModeBtn.html('<i class="fas fa-sun" ></i>');
+            jQuery('body').addClass('dark');
+        }
+    });
 
 
     $('#send-email-link').click(function (e) {
