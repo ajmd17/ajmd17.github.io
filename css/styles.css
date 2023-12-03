@@ -590,7 +590,7 @@ body.dark .project-circle {
     transform: translateX(-50%);
     min-width: 200px;
     max-width: 1300px;
-    width: 80%;
+    /* width: 80%; */
     min-height: 200px;
     max-height: 85%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -599,7 +599,7 @@ body.dark .project-circle {
     padding: 20px;
     color: #111;
     background-color: #fff;
-    overflow: scroll;
+    overflow: auto;
     z-index: 101;
 }
 .modal-content .modal-header {

@@ -4,10 +4,19 @@ var PORTFOLIO_DATA = {
     title: 'Hyperion Game Engine',
     description: 'Powerful multi-threaded 3D game engine written in C++17. Uses Vulkan. Includes 4 global illumination techniques (DDGI, Light probes, HBIL, voxel cone tracing), ray tracing support, screen space reflections, PBR, temporal AA, HBAO, GPU compute occlusion culling, GPU particles, and more. Check out the Github page for a larger list of features.',
 
-    img: ['hyp-4.png', 'hyp-2.jpeg'],
+    img: ['screenshot1-ogl.PNG', 'chapel.jpg'],
     links: [{
         name: 'GitHub',
-        href: 'http://github.com/krait-games/hyperion-engine'
+        href: 'https://github.com/krait-games/hyperion-engine'
+    }]
+  },
+  {
+    title: 'Helios Game Engine',
+    description: 'A smaller, WebGL-based game engine written in TypeScript. Includes scene graph, PBR, post-processing, a 3D Gaussian Splatting implementation and more.',
+    img: ['helios_1.png'],
+    links: [{
+      name: 'GitHub',
+      href: 'https://github.com/ajmd17/helios'
     }]
   },
   /*{
