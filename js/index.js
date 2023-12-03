@@ -11,6 +11,7 @@ function memoize(method) {
             let keys = keyArray[i],
                 matches = true
 
+                
             if (keys.length != args.length) {
                 continue
             }
