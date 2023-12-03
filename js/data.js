@@ -10,7 +10,7 @@ var PORTFOLIO_DATA = {
         href: 'http://github.com/krait-games/hyperion-engine'
     }]
   },
-  {
+  /*{
     title: 'BidSquid Online Marketplace',
     tags: ['Node.js', 'TypeScript', 'React', 'MongoDB'],
     description: 'Online marketplace to connect buyers and sellers of agricultural goods. Includes a backend system for managing inventory and a procurement system. Read more: https://entrevestor.com/home/entry/hachey-traded-wall-street-for-agtech',
@@ -18,7 +18,7 @@ var PORTFOLIO_DATA = {
     links: [{
       name: 'Visit Site',
       main: true,
-      href: 'https://bidsquid.com'
+      href: 'https://web.archive.org/web/20180316132231/https://bidsquid.com/'
     }]
   }, {
     title: 'Apex3D Game Engine',
@@ -39,7 +39,7 @@ var PORTFOLIO_DATA = {
         href: 'https://github.com/ajmd17/TangOS'
     }]
 
-  }, {
+  },*/ {
       title: 'Get Real!',
       tags: ['Node.js', 'JavaScript'],
       description: 'A website with a blog, audio player, events and merch for my band. All content is written in an extended form of markdown using a custom system.',
@@ -59,7 +59,7 @@ var PORTFOLIO_DATA = {
         main: true,
         href: 'https://github.com/ajmd17/lyric-video-editor'
       }]
-    }, {
+    }, /*{
       title: 'Celtic Colours app',
       tags: ['React Native'],
       description: 'Provides scheduling and event details for the Celtic Colours festival in Cape Breton. Contracted to work on this with Novastream.',
@@ -68,7 +68,7 @@ var PORTFOLIO_DATA = {
         main: true,
         href: 'https://github.com/ajamiesonfraser/celticcoloursapp/tree/andrew'
       }]
-    }, {
+    },*/ {
       title: 'BlockML - Component Language',
       tags: ['JavaScript'],
       description: 'Makes writing HTML feel more consistent with the way we write JavaScript and CSS.',
@@ -80,7 +80,7 @@ var PORTFOLIO_DATA = {
         name: 'GitHub (blockml-component)',
         href: 'https://github.com/ajmd17/blockml-component'
       }]
-    }, {
+    }, /*{
       title: 'auto-clockify',
       tags: ['Ruby'],
       small: true,
@@ -89,7 +89,7 @@ var PORTFOLIO_DATA = {
         name: 'GitHub',
         href: 'https://github.com/ajmd17/auto-clockify'
       }]
-    }, {
+    },*/ {
       title: 'CoinTrends',
       tags: ['Node.js', 'JavaScript'],
       small: true,
