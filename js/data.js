@@ -57,7 +57,7 @@ var PORTFOLIO_DATA = {
       links: [{
         name: 'Visit Site',
         main: true,
-        href: 'https://getreal.band'
+        href: 'https://web.archive.org/web/20210617060818/https://getreal.band/'
       }]
     }, {
       title: 'Lyric Video Editor',
