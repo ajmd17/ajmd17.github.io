@@ -603,7 +603,7 @@ body.dark .project-circle {
 }
 
 #night-mode-wrapper {
-    position: absolute;
+    position: fixed;
     bottom: 15px;
     right: 35px;
     z-index: 9999;
