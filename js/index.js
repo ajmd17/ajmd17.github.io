@@ -254,9 +254,14 @@ $(document).ready(function () {
 
 
     $('#send-email-link').click(function (e) {
-        console.log(e)
-        var addr = 'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.ca';
-        $('#email-address-val').html('<a href="mailto:' + addr  + '">' + addr + '</a>');
+        const addresses = [
+            'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.dev',
+            'a' + 'n' + 'd' + 'r' + 'e' + 'w' + 'm' + 'a' + 'c' + 'd' + 'o' + 'n' + 'a' + 'l' + 'd' + '@' + 'g' + 'm' + 'a' + 'i' + 'l' + '.c' + 'o' + 'm'
+        ];
+
+        $('#email-address-val').html(addresses.reduce((previousValue, currentValue, index) => {
+            return previousValue + `<a href="mailto:${currentValue}" target="_blank">${currentValue}</a><br>` + (index < addresses.length - 1 ? '&nbsp;or&nbsp;' : '')
+        }, ''));
         $('#email-address-box').show();
     });
 
