@@ -256,7 +256,7 @@ $(document).ready(function () {
     $('#send-email-link').click(function (e) {
         const addresses = [
             'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.dev',
-            'a' + 'n' + 'd' + 'r' + 'e' + 'w' + 'm' + 'a' + 'c' + 'd' + 'o' + 'n' + 'a' + 'l' + 'd' + '@' + 'g' + 'm' + 'a' + 'i' + 'l' + '.c' + 'o' + 'm'
+            'a' + 'n' + 'd' + 'r' + 'e' + 'w' + 'm' + 'a' + 'c' + 'd' + 'o' + 'n' + 'a' + 'l' + 'd' + '9' + '7' + '1' + '@' + 'g' + 'm' + 'a' + 'i' + 'l' + '.c' + 'o' + 'm'
         ];
 
         $('#email-address-val').html(addresses.reduce((previousValue, currentValue, index) => {
