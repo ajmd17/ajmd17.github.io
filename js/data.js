@@ -6,11 +6,17 @@ var PORTFOLIO_DATA = {
     tags: ['C++', 'Vulkan', 'HypScript'],
     img: [{
       href: 'hyp-rt.png',
-      description: 'This image showcases the ray traced implementation in Hyperion, used to compute real-time reflections using hardware ray tracing.<br><br>Scene: Pica Pica'
+      description: 'This image showcases the ray tracing implementation in Hyperion, used to compute real-time reflections using ray tracing hardware on modern graphics cards.<br><br>Scene: Pica Pica'
+    }, {
+      href: 'hyp-parallax.png',
+      description: 'This image showcases the parallax occlusion mapping implementation in Hyperion.<br><br>Scene: Sponza Atrium'
     }, 'chapel.jpg'],
     videos: [{
       href: 'hyp-ddgi.webm',
       description: 'This video shows the dynamic diffuse global illumination (DDGI) technique as implemented by myself in my game engine, Hyperion.<br><br>DDGI is a modern global illumination technique which uses hardware ray tracing to compute indirect diffuse lighting.<br><br>Scene: Sponza Atrium'
+    }, {
+      href: 'hyp-particles.webm',
+      description: 'This video shows the GPU particle system in Hyperion. Particles are simulated on the GPU using compute shaders.<br><br>Scene: Sponza Atrium'
     }],
     links: [
       {
