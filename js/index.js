@@ -145,6 +145,10 @@ function renderLinksAsHtml(text) {
 function buildPortfolioItem(item) {
     const $card = $('<div class="project-circle"></div>')
 
+    if (item.featured) {
+        $card.addClass('featured');
+    }
+
     if (item.wip || item.small) {
         $card.addClass('small')
     }
@@ -161,7 +165,8 @@ function buildPortfolioItem(item) {
     //     }
     // }
 
-    const $projectTitle = $('<div class="project-title">')
+    const $projectTitle = $('<div class="project-title">');
+
     $projectTitle.append(`<h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3>`)
 
     if ('tags' in item && item.tags.length) {
@@ -175,7 +180,7 @@ function buildPortfolioItem(item) {
     }
 
     $header.append($projectTitle)
-    $header.append(`<span class="description">${renderLinksAsHtml(item.description)}</span>`)
+    $header.append(`<p class="description">${renderLinksAsHtml(item.description)}</p>`)
 
     $card.append($header)
 

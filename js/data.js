@@ -2,6 +2,7 @@ var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
     title: 'Hyperion Game Engine',
+    featured: true,
     description: 'Powerful multi-threaded 3D game engine written in C++17. Uses Vulkan. Includes 4 global illumination techniques (DDGI, Spherical harmonics probes, HBIL, voxel cone tracing), ray tracing support, screen space reflections, PBR, temporal AA, HBAO, GPU compute occlusion culling, GPU particles, scripting, and more. Check out the Github page for a larger list of features.',
     tags: ['C++', 'Vulkan', 'HypScript'],
     img: [{
@@ -64,7 +65,7 @@ var PORTFOLIO_DATA = {
         href: 'https://github.com/ajmd17/TangOS'
     }]
 
-  },*/ {
+  }, {
       title: 'Get Real!',
       tags: ['Node.js', 'JavaScript'],
       description: 'A website with a blog, audio player, events and merch for my band. All content is written in an extended form of markdown using a custom system.',
@@ -84,7 +85,7 @@ var PORTFOLIO_DATA = {
         main: true,
         href: 'https://github.com/ajmd17/lyric-video-editor'
       }]
-    }, /*{
+    }, {
       title: 'Celtic Colours app',
       tags: ['React Native'],
       description: 'Provides scheduling and event details for the Celtic Colours festival in Cape Breton. Contracted to work on this with Novastream.',
@@ -96,7 +97,7 @@ var PORTFOLIO_DATA = {
     },*/ {
       title: 'BlockML - Component Language',
       tags: ['JavaScript'],
-      description: 'Makes writing HTML feel more consistent with the way we write JavaScript and CSS.',
+      description: 'A web framework similar to React, with a syntax that is similar to JSON or QML.',
       img: ['blockml_1.jpg'],
       links: [{
         name: 'GitHub',
@@ -114,7 +115,7 @@ var PORTFOLIO_DATA = {
         name: 'GitHub',
         href: 'https://github.com/ajmd17/auto-clockify'
       }]
-    },*/ {
+    }, {
       title: 'CoinTrends',
       tags: ['Node.js', 'JavaScript'],
       small: true,
@@ -136,7 +137,7 @@ var PORTFOLIO_DATA = {
         name: 'GitHub',
         href: 'http://github.com/ajmd17/vennio'
       }]
-    }, {
+    },*/ {
       title: 'Ace Programming Language',
       tags: ['C++'],
       small: true,

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: #fff;
 /*
     background: url('../img/pattern-blue.png') no-repeat center center fixed;
@@ -492,6 +492,11 @@ body.dark .page#about {
 body.dark .project-circle {
     background-color: rgb(42,52,61);
 }
+.project-circle .description {
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .project-circle .project-title {
     font-size: 0.8em;
     display: flex;
@@ -541,12 +546,30 @@ body.dark .project-circle .project-title .tags .tag {
     margin: 0; */
     font-size: 0.7em;
 }
+
+.project-circle.featured {
+    padding: 15px 20px;
+}
+.project-circle.featured .project-title {
+    margin-bottom: 5px;
+}
+.project-circle.featured .project-title h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.project-circle.featured .description {
+    margin: 10px 0;
+    font-size: 0.9em;
+    line-height: 150%;
+}
+
 .project-circle .project-title h3 {
     margin: 0;
     font-size: 1em;
 }
 .project-circle .description {
     font-size: 0.8em;
+    line-height: 150%;
 }
 .project-circle .description.italic {
     font-style: italic;
