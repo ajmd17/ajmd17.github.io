@@ -1,6 +1,10 @@
 
 
-const BY_YEAR = false
+const BY_YEAR = false;
+const EMAIL_ADDRESSES = [
+    'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.dev',
+    'a' + 'n' + 'd' + 'r' + 'e' + 'w' + 'm' + 'a' + 'c' + 'd' + 'o' + 'n' + 'a' + 'l' + 'd' + '9' + '7' + '1' + '@' + 'g' + 'm' + 'a' + 'i' + 'l' + '.c' + 'o' + 'm'
+];
 
 function memoize(method) {
     const keyArray = [],
@@ -261,6 +265,14 @@ $(document).ready(function () {
     addEscKeyListener()
     buildPortfolioItems()
 
+    setTimeout(() => {
+        const $contactMeButton = $('#contact-me-button');
+
+        if ($contactMeButton.length) {
+            $contactMeButton.attr('href', `mailto:${EMAIL_ADDRESSES[0]}`);
+        }
+    }, 10);
+
     previewModalInstance.bindEvents()
 
     var $nightModeBtn = $('#night-mode-btn');
@@ -290,13 +302,8 @@ $(document).ready(function () {
 
 
     $('#send-email-link').click(function (e) {
-        const addresses = [
-            'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.dev',
-            'a' + 'n' + 'd' + 'r' + 'e' + 'w' + 'm' + 'a' + 'c' + 'd' + 'o' + 'n' + 'a' + 'l' + 'd' + '9' + '7' + '1' + '@' + 'g' + 'm' + 'a' + 'i' + 'l' + '.c' + 'o' + 'm'
-        ];
-
-        $('#email-address-val').html(addresses.reduce((previousValue, currentValue, index) => {
-            return previousValue + `<a href="mailto:${currentValue}" target="_blank">${currentValue}</a><br>` + (index < addresses.length - 1 ? '&nbsp;or&nbsp;' : '')
+        $('#email-address-val').html(EMAIL_ADDRESSES.reduce((previousValue, currentValue, index) => {
+            return previousValue + `<a href="mailto:${currentValue}" target="_blank">${currentValue}</a><br>` + (index < EMAIL_ADDRESSES.length - 1 ? '&nbsp;or&nbsp;' : '')
         }, ''));
         $('#email-address-box').show();
     });
