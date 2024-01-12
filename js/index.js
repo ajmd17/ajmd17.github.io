@@ -69,6 +69,10 @@ const previewModalInstance = new class PreviewModal {
         })
 
         this.closeButton.click((e) => {
+            if (e) {
+                e.preventDefault()
+            }
+
             this.hide()
         })
     }
