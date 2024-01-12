@@ -4,11 +4,20 @@ var PORTFOLIO_DATA = {
     title: 'Hyperion Game Engine',
     description: 'Powerful multi-threaded 3D game engine written in C++17. Uses Vulkan. Includes 4 global illumination techniques (DDGI, Spherical harmonics probes, HBIL, voxel cone tracing), ray tracing support, screen space reflections, PBR, temporal AA, HBAO, GPU compute occlusion culling, GPU particles, scripting, and more. Check out the Github page for a larger list of features.',
     tags: ['C++', 'Vulkan', 'HypScript'],
-    img: ['screenshot1-ogl.PNG', 'chapel.jpg'],
-    links: [{
+    img: [{
+      href: 'hyp-rt.png',
+      description: 'This image showcases the ray traced implementation in Hyperion, used to compute real-time reflections using hardware ray tracing.<br><br>Scene: Pica Pica'
+    }, 'chapel.jpg'],
+    videos: [{
+      href: 'hyp-ddgi.webm',
+      description: 'This video shows the dynamic diffuse global illumination (DDGI) technique as implemented by myself in my game engine, Hyperion.<br><br>DDGI is a modern global illumination technique which uses hardware ray tracing to compute indirect diffuse lighting.<br><br>Scene: Sponza Atrium'
+    }],
+    links: [
+      {
         name: 'GitHub',
         href: 'https://github.com/krait-games/hyperion-engine'
-    }]
+      }
+    ]
   },
   {
     title: 'Helios Engine',

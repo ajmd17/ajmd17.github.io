@@ -75,12 +75,26 @@ const previewModalInstance = new class PreviewModal {
         this._enableScroll()
     }
 
-    show(item, imgHref) {
-        this.hide()
+    /**
+     * 
+     * @param {*} item 
+     * @param {string} href 
+     * @param {'img' | 'video'} type 
+     * @param {object} [options]
+     */
+    show(item, href, type = 'img', options = undefined) {
+        this.hide();
 
-        const $previewImg = this.element.find('.preview-img')
-    
-        $previewImg[0].src = `img/preview/${imgHref}` 
+        this.element.attr('data-mode', type);
+        this.element.find('.description').html((options && options.description) ? options.description : '');
+
+        if (type === 'img') {
+            const $previewImg = this.element.find('.preview-img')
+            $previewImg[0].src = `img/preview/${href}` 
+        } else if (type === 'video') {
+            const $previewVideo = this.element.find('.preview-video')
+            $previewVideo[0].src = `img/preview/${href}` 
+        }
     
         this.element.show()
 
@@ -162,14 +176,36 @@ function buildPortfolioItem(item) {
     $card.append($header)
 
     if ('img' in item) {
-        const $previews = $('<div class="previews"></div>')
+        const $previews = $('<div class="previews"></div>');
 
-        for (let imgHref of item.img) {
-            $previews.append($('<div class="preview"></div>')
-                .append($(`<img src="img/preview/${imgHref}">`))
-                .click(function () {
-                    previewModalInstance.show(item, imgHref)
-                }))
+        if (item.videos) {
+            for (let element of item.videos) {
+                const href = typeof element === 'string' ? element : element.href;
+                const description = typeof element === 'string' ? '' : element.description;
+
+                $previews.append($('<div class="preview"></div>')
+                    .append($(`<video muted autoplay loop src="img/preview/${href}"></video>`))
+                    .click(function () {
+                        previewModalInstance.show(item, href, 'video', {
+                            description
+                        });
+                    }))
+            }
+        }
+
+        if (item.img) {
+            for (let element of item.img) {
+                const href = typeof element === 'string' ? element : element.href;
+                const description = typeof element === 'string' ? '' : element.description;
+
+                $previews.append($('<div class="preview"></div>')
+                    .append($(`<img src="img/preview/${href}">`))
+                    .click(function () {
+                        previewModalInstance.show(item, href, 'img', {
+                            description
+                        });
+                    }))
+            }
         }
 
         $card.append($previews)

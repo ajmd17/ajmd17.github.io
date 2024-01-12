@@ -592,7 +592,8 @@ body.dark .project-circle {
     box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 
-.project-circle .previews .preview img {
+.project-circle .previews .preview img,
+.project-circle .previews .preview video {
     height: 100%;
 }
 
@@ -666,6 +667,21 @@ body.dark .project-circle {
 
 #preview-modal .preview-img {
     width: 100%;
+}
+#preview-modal .preview-video {
+    width: 100%;
+}
+#preview-modal[data-mode="img"] .preview-img {
+    display: block;
+}
+#preview-modal[data-mode="img"] .preview-video {
+    display: none;
+}
+#preview-modal[data-mode="video"] .preview-img {
+    display: none;
+}
+#preview-modal[data-mode="video"] .preview-video {
+    display: block;
 }
 
 @media (max-width: 768px) {
