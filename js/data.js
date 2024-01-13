@@ -3,7 +3,7 @@ var PORTFOLIO_DATA = {
   projects: [{
     title: 'Hyperion Game Engine',
     featured: true,
-    description: 'Powerful multi-threaded 3D game engine written in C++17. Uses Vulkan. Includes 4 global illumination techniques (DDGI, Spherical harmonics probes, HBIL, voxel cone tracing), ray tracing support, screen space reflections, PBR, temporal AA, HBAO, GPU compute occlusion culling, GPU particles, scripting, and more. Check out the Github page for a larger list of features.',
+    description: '3D game engine written in C++. Uses Vulkan to render.<br>Includes 4 global illumination techniques, ray tracing support, screen space reflections, PBR, temporal anti-aliasing, ambient occlusion, GPU-based occlusion culling, GPU particles, a scripting language, and more.<br><br>Check out the Github page for a larger list of features.',
     tags: ['C++', 'Vulkan', 'HypScript'],
     img: [{
       href: 'hyp-rt.png',

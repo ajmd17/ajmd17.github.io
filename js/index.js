@@ -171,7 +171,11 @@ function buildPortfolioItem(item) {
 
     const $projectTitle = $('<div class="project-title">');
 
-    $projectTitle.append(`<h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3>`)
+    if (item.links && item.links[0]) {
+        $projectTitle.append(`<h3><a href="${item.links[0].href}" target="_blank">${itemTitle}${item.wip ? ' (WIP)' : ''}</a></h3>`)
+    } else {
+        $projectTitle.append(`<h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3>`)
+    }
 
     if ('tags' in item && item.tags.length) {
         const $tags = $('<div class="tags">')
