@@ -13,10 +13,10 @@ var PORTFOLIO_DATA = {
       description: 'This image showcases the parallax occlusion mapping implementation in Hyperion.<br><br>Scene: Sponza Atrium'
     }, 'chapel.jpg'],
     videos: [{
-      href: 'hyp-ddgi.webm',
+      href: 'hyp-ddgi.mp4',
       description: 'This video shows the dynamic diffuse global illumination (DDGI) technique as implemented by myself in my game engine, Hyperion.<br><br>DDGI is a modern global illumination technique which uses hardware ray tracing to compute indirect diffuse lighting.<br><br>Scene: Sponza Atrium'
     }, {
-      href: 'hyp-particles.webm',
+      href: 'hyp-particles.mp4',
       description: 'This video shows the GPU particle system in Hyperion. Particles are simulated on the GPU using compute shaders.<br><br>Scene: Sponza Atrium'
     }],
     links: [
