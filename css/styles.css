@@ -680,11 +680,6 @@ body.dark .project-circle {
     border-radius: 3px;
     overflow: hidden;
 }
-
-.project-circle .previews .preview:hover {
-    box-shadow: 0 0 2px rgba(0,0,0,0.2);
-}
-
 .project-circle .previews .preview img,
 .project-circle .previews .preview video {
     height: 100%;
