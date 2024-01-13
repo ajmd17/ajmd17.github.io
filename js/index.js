@@ -262,6 +262,50 @@ function buildPortfolioItems() {
     }
 }
 
+function buildEmploymentItems() {
+    const $container = $('.employment-container');
+    let $ul = $container.find('ul');
+
+    if (!$ul.length) {
+        $ul = $('<ul class="occupations"></ul>');
+        $container.append($ul);
+    }
+
+    $ul.html('');
+
+    PORTFOLIO_DATA.jobs.forEach((item) => {
+        const $li = $('<li></li>');
+
+        $li.append(`
+            <div class="project-title">
+                <h3>${item.name}</h3>
+            </div>
+            <p class="description">${item.title}</p>
+            <p class="description">${item.startDate} / ${item.endDate}</p>
+        `);
+
+        $ul.append($li);
+    });
+}
+
+function buildSkills() {
+    const $container = $('.skills-container');
+    let $ul = $container.find('ul');
+
+    if (!$ul.length) {
+        $ul = $('<ul class="skills"></ul>');
+        $container.append($ul);
+    }
+
+    $ul.html('');
+
+    PORTFOLIO_DATA.skills.forEach((skill) => {
+        const $skill = $(`<li>${skill}</li>`);
+
+        $ul.append($skill);
+    });
+}
+
 function addEscKeyListener() {
     $(document).keyup(function (e) {
         if (e.key === 'Escape') {
@@ -271,8 +315,11 @@ function addEscKeyListener() {
 }
 
 $(document).ready(function () {
-    addEscKeyListener()
-    buildPortfolioItems()
+    addEscKeyListener();
+
+    buildPortfolioItems();
+    buildEmploymentItems();
+    buildSkills();
 
     setTimeout(() => {
         const $contactMeButton = $('#contact-me-button');

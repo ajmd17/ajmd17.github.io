@@ -394,7 +394,8 @@ body.dark .profile-link img {
     margin-bottom: 35px;
 }
 .card .title {
-    font-size: 10px;
+    font-size: 1.0em;
+    font-weight: bold;
     color: #555;
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;

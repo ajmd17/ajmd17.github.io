@@ -146,5 +146,56 @@ var PORTFOLIO_DATA = {
         name: 'GitHub',
         href: 'http://github.com/ajmd17/ace-lang'
       }]
-    }]
+  }],
+  jobs: [
+    {
+      name: 'Chido',
+      title: 'Technical Co-Founder, Lead Developer',
+      startDate: 'April 2023',
+      endDate: 'January 2024'
+    },
+    {
+      name: 'CD Projekt Red',
+      title: 'Engine Programmer',
+      startDate: 'April 2022',
+      endDate: 'April 2023'
+    },
+    {
+      name: 'Carbide (formerly Securicy)',
+      title: 'Team Lead, Software Developer',
+      startDate: 'May 2019',
+      endDate: 'Febuary 2022'
+    },
+    {
+      name: 'Marcato (Acq. Leap Event Technology)',
+      title: 'Software Developer',
+      startDate: 'June 2017',
+      endDate: 'March 2019'
+    },
+    {
+      name: 'Bidsquid',
+      title: 'Co-Founder, Lead Developer',
+      startDate: 'January 2016',
+      endDate: 'May 2017'
+    }
+  ],
+  skills: [
+    'GPU Programming',
+    'Full-stack Web Development',
+    'Machine learning',
+    'WebGL',
+    'OpenGL',
+    'Vulkan',
+    'Python',
+    'C++',
+    'Game engines',
+    'JavaScript',
+    'Ruby on Rails',
+    'Node.js',
+    'React.js',
+    'TypeScript',
+    'AWS',
+    'C',
+    'Git',
+  ]
 }
