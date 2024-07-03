@@ -22,7 +22,7 @@ var PORTFOLIO_DATA = {
     links: [
       {
         name: 'GitHub',
-        href: 'https://github.com/krait-games/hyperion-engine'
+        href: 'https://github.com/notomorrow/hyperion-engine'
       }
     ]
   },
@@ -138,19 +138,25 @@ var PORTFOLIO_DATA = {
         href: 'http://github.com/ajmd17/vennio'
       }]
     },*/ {
-      title: 'Ace Programming Language',
+      title: 'HypScript',
       tags: ['C++'],
       small: true,
       description: 'Progrmaming language written from scratch in C++. Includes bytecode language and virtual machine with garbage collection.',
       links: [{
         name: 'GitHub',
-        href: 'http://github.com/ajmd17/ace-lang'
+        href: 'https://github.com/notomorrow/hypscript'
       }]
   }],
   jobs: [
     {
+      name: 'Free Range Games',
+      title: 'Engine Programmer',
+      startDate: 'March 2024',
+      endDate: 'Present'
+    },
+    {
       name: 'Chido',
-      title: 'Technical Co-Founder, Lead Developer',
+      title: 'CTO / Co-Founder / Lead Developer',
       startDate: 'April 2023',
       endDate: 'January 2024'
     },
@@ -174,7 +180,7 @@ var PORTFOLIO_DATA = {
     },
     {
       name: 'Bidsquid',
-      title: 'Co-Founder, Lead Developer',
+      title: 'CTO / Co-Founder / Lead Developer',
       startDate: 'January 2016',
       endDate: 'May 2017'
     }
