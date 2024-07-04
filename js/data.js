@@ -36,16 +36,6 @@ var PORTFOLIO_DATA = {
       }
     ]
   },
-  {
-    title: 'Helios Engine',
-    description: 'A smaller, WebGL rendering engine written in TypeScript with some WebAssembly (Rust). Includes a simple scene graph, PBR, post-processing, a 3D Gaussian Splatting implementation and more.',
-    tags: ['TypeScript', 'WebGL', 'Rust', 'WebAssembly'],
-    img: ['helios_1.png'],
-    links: [{
-      name: 'GitHub',
-      href: 'https://github.com/ajmd17/helios'
-    }]
-  },
   /*{
     title: 'BidSquid Online Marketplace',
     tags: ['Node.js', 'TypeScript', 'React', 'MongoDB'],
@@ -104,19 +94,7 @@ var PORTFOLIO_DATA = {
         main: true,
         href: 'https://github.com/ajamiesonfraser/celticcoloursapp/tree/andrew'
       }]
-    },*/ {
-      title: 'BlockML - Component Language',
-      tags: ['JavaScript'],
-      description: 'A web framework similar to React, with a syntax that is similar to JSON or QML.',
-      img: ['blockml_1.jpg'],
-      links: [{
-        name: 'GitHub',
-        href: 'https://github.com/ajmd17/blockml'
-      }, {
-        name: 'GitHub (blockml-component)',
-        href: 'https://github.com/ajmd17/blockml-component'
-      }]
-    }, /*{
+    },*/  /*{
       title: 'auto-clockify',
       tags: ['Ruby'],
       small: true,
@@ -150,12 +128,33 @@ var PORTFOLIO_DATA = {
     },*/ {
       title: 'HypScript',
       tags: ['C++'],
-      small: true,
       description: 'Progrmaming language written from scratch in C++. Includes bytecode language and virtual machine with garbage collection.',
       links: [{
         name: 'GitHub',
         href: 'https://github.com/notomorrow/hypscript'
       }]
+  },
+  {
+    title: 'Helios Engine',
+    description: 'A smaller, WebGL rendering engine written in TypeScript with some WebAssembly (Rust). Includes a simple scene graph, PBR, post-processing, a 3D Gaussian Splatting implementation and more.',
+    tags: ['TypeScript', 'WebGL', 'Rust', 'WebAssembly'],
+    img: ['helios_1.png'],
+    links: [{
+      name: 'GitHub',
+      href: 'https://github.com/ajmd17/helios'
+    }]
+  },{
+    title: 'BlockML - Component Language',
+    tags: ['JavaScript'],
+    description: 'A web framework similar to React, with a syntax that is similar to JSON or QML.',
+    img: ['blockml_1.jpg'],
+    links: [{
+      name: 'GitHub',
+      href: 'https://github.com/ajmd17/blockml'
+    }, {
+      name: 'GitHub (blockml-component)',
+      href: 'https://github.com/ajmd17/blockml-component'
+    }]
   }],
   jobs: [
     {
@@ -196,22 +195,20 @@ var PORTFOLIO_DATA = {
     }
   ],
   skills: [
-    'GPU Programming',
-    'Full-stack Web Development',
+    'GPU programming',
+    'Full-stack software development',
     'Machine learning',
-    'WebGL',
-    'OpenGL',
-    'Vulkan',
-    'Python',
-    'C++',
     'Game engines',
+    'C++',
+    'C#',
     'JavaScript',
+    'Python',
     'Ruby on Rails',
     'Node.js',
     'React.js',
     'TypeScript',
     'AWS',
     'C',
-    'Git',
+    'Git'
   ]
 }
