@@ -3,8 +3,18 @@ var PORTFOLIO_DATA = {
   projects: [{
     title: 'Hyperion Game Engine',
     featured: true,
-    description: '3D game engine written in C++. Uses Vulkan to render.<br>Includes 4 global illumination techniques, ray tracing support, screen space reflections, PBR, temporal anti-aliasing, ambient occlusion, GPU-based occlusion culling, GPU particles, a scripting language, and more.<br><br>Check out the Github page for a larger list of features.',
-    tags: ['C++', 'Vulkan', 'HypScript'],
+    description: '3D game engine written in C++. Rendering primarily uses a Vulkan backend. Oodles of features, such as:<br>\
+      &bull;&nbsp;Custom UI library, built from scratch<br>\
+      &bull;&nbsp;4 global illumination techniques<br>\
+      &bull;&nbsp;Hardware ray tracing support + path tracing<br>\
+      &bull;&nbsp;Post processing effects, such as screen space reflections, SSAO, temporal anti-aliasing<br>\
+      &bull;&nbsp;Physically based shading / PBR material system<br>\
+      &bull;&nbsp;GPU-based occlusion culling<br>\
+      &bull;&nbsp;Advanced async job system for multi-threading<br>\
+      &bull;&nbsp;.NET Core integration for C# scripting<br>\
+      &bull;&nbsp;GPU particle simulation<br>\
+      and a lot more, you should check it out on GitHub! https://github.com/notomorrow/hyperion-engine',
+    tags: ['C++', 'C#', 'Vulkan'],
     img: [{
       href: 'hyp-rt.png',
       description: 'This image showcases the ray tracing implementation in Hyperion, used to compute real-time reflections using ray tracing hardware on modern graphics cards.<br><br>Scene: Pica Pica'
