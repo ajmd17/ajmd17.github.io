@@ -321,9 +321,9 @@ function addEscKeyListener() {
 $(document).ready(function () {
     addEscKeyListener();
 
-    buildPortfolioItems();
-    buildEmploymentItems();
-    buildSkills();
+    // buildPortfolioItems();
+    // buildEmploymentItems();
+    // buildSkills();
 
     setTimeout(() => {
         const $contactMeButton = $('#contact-me-button');
