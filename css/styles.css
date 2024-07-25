@@ -667,7 +667,7 @@ body.dark .project-circle {
     margin: 0;
     padding: 3px;
     border: none;
-    width: 50%;
+    width: 49%;
     height: auto;
     aspect-ratio: 16/9;
     /* display: inline-block; */
