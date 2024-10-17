@@ -166,7 +166,7 @@ var PORTFOLIO_DATA = {
     {
       name: 'Chido',
       title: 'CTO / Co-Founder / Lead Developer',
-      startDate: 'April 2023',
+      startDate: 'January 2023',
       endDate: 'January 2024'
     },
     {
