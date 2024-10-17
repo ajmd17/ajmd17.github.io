@@ -197,7 +197,7 @@ body.dark #about .header .subtext {
     cursor: pointer;
 }
 #about .header p {
-    margin: 0;
+    margin: 10px 0;
     font-size: 0.8em;
     line-height: 150%;
 }
@@ -217,9 +217,9 @@ body.dark #about .header .subtext {
 }
 
 .avatar {
-    /* border-radius: 50%; */
-    /* width: 90px; */
-    height: 90px;
+    width: 75px;
+    /* top: 5px; */
+    position: relative;
 }
 
 
@@ -300,7 +300,6 @@ body.dark #about .header .subtext {
 }
 
 .intro-text {
-    margin: 0;
     font-size: 1em;
 }
 .intro-text br {
