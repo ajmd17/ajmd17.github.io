@@ -146,6 +146,46 @@ function renderLinksAsHtml(text) {
     }, text)
 }
 
+function buildPreviews(item) {
+    if (item.img || item.videos) {
+        const $previews = $('<div class="previews"></div>');
+
+        if (item.videos) {
+            for (let element of item.videos) {
+                const href = typeof element === 'string' ? element : element.href;
+                const description = typeof element === 'string' ? '' : element.description;
+
+                $previews.append($('<div class="preview"></div>')
+                    .append($(`<video muted autoplay loop src="img/preview/${href}"></video>`))
+                    .click(function () {
+                        previewModalInstance.show(item, href, 'video', {
+                            description
+                        });
+                    }))
+            }
+        }
+
+        if (item.img) {
+            for (let element of item.img) {
+                const href = typeof element === 'string' ? element : element.href;
+                const description = typeof element === 'string' ? '' : element.description;
+
+                $previews.append($('<div class="preview"></div>')
+                    .append($(`<img src="img/preview/${href}">`))
+                    .click(function () {
+                        previewModalInstance.show(item, href, 'img', {
+                            description
+                        });
+                    }))
+            }
+        }
+
+        return $previews;
+    }
+
+    return null;
+}
+
 function buildPortfolioItem(item) {
     const $card = $('<div class="project-circle"></div>')
 
@@ -192,40 +232,10 @@ function buildPortfolioItem(item) {
 
     $card.append($header)
 
-    if ('img' in item) {
-        const $previews = $('<div class="previews"></div>');
+    const $previews = buildPreviews(item);
 
-        if (item.videos) {
-            for (let element of item.videos) {
-                const href = typeof element === 'string' ? element : element.href;
-                const description = typeof element === 'string' ? '' : element.description;
-
-                $previews.append($('<div class="preview"></div>')
-                    .append($(`<video muted autoplay loop src="img/preview/${href}"></video>`))
-                    .click(function () {
-                        previewModalInstance.show(item, href, 'video', {
-                            description
-                        });
-                    }))
-            }
-        }
-
-        if (item.img) {
-            for (let element of item.img) {
-                const href = typeof element === 'string' ? element : element.href;
-                const description = typeof element === 'string' ? '' : element.description;
-
-                $previews.append($('<div class="preview"></div>')
-                    .append($(`<img src="img/preview/${href}">`))
-                    .click(function () {
-                        previewModalInstance.show(item, href, 'img', {
-                            description
-                        });
-                    }))
-            }
-        }
-
-        $card.append($previews)
+    if ($previews !== null) {
+        $card.append($previews);
     }
 
     if ('links' in item) {
@@ -283,10 +293,20 @@ function buildEmploymentItems() {
         $li.append(`
             <div class="project-title">
                 <h3>${item.name}</h3>
+                <div class="title-start-end">
+                    <p class="text">${item.title}</p>
+                    <p class="text">${item.startDate} / ${item.endDate}</p>
+                </div>
             </div>
-            <p class="description">${item.title}</p>
-            <p class="description">${item.startDate} / ${item.endDate}</p>
+            ${item.description ? `<div class="description">${item.description.split('\n').map(str => `<div class="line">${str.replaceAll('*', '&bull;')}</div>`).join('')}</div>` : ''}
+            ${item.links ? `<div class="links">${item.links.map((link) => `<a href="${link.href}" target="_blank">${link.name}&nbsp;&nbsp;<i class="fas fa-external-link-square-alt"></i></a>`).join('')}</div>` : ''}
         `);
+
+        const $previews = buildPreviews(item);
+
+        if ($previews !== null) {
+            $li.append($previews);
+        }
 
         $ul.append($li);
     });

@@ -1,6 +1,20 @@
 var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
+    title: 'Beacon AI Coding Tool',
+    featured: true,
+    tags: ['TypeScript', 'Python', 'Machine Learning'],
+    videos: [{
+      href: 'beacon1.webm',
+      description: 'This video showcases the Beacon AI coding tool, which provides code suggestions and completions in editor. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.'
+    }],
+    description: `
+      An alternative to GitHub Copilot I built to allow usage of locally ran language models. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.<br>
+      &bull;&nbsp;Built using TypeScript for the Visual Studio Code extension, and Python for the backend and interfacing with AI models.<br>
+      &bull;&nbsp;Has the ability to swap out AI models, and supports multiple languages.<br>
+    `.trim()
+  },
+  {
     title: 'Hyperion Game Engine',
     featured: true,
     description: '3D game engine written in C++. Rendering primarily uses a Vulkan backend. Oodles of features, such as:<br>\
@@ -161,37 +175,108 @@ var PORTFOLIO_DATA = {
       name: 'Free Range Games',
       title: 'Engine Programmer',
       startDate: 'March 2024',
-      endDate: 'Present'
+      endDate: 'Present',
+      description: `
+        * Currently working on a new game project using Unreal Engine 5
+        * Focused on rendering and engine tools.
+      `.trim(),
+      links: [
+        {
+          name: 'Free Range Games',
+          href: 'https://www.freerangegames.com/'
+        }
+      ]
     },
     {
       name: 'Chido',
       title: 'CTO / Co-Founder / Lead Developer',
       startDate: 'January 2023',
-      endDate: 'January 2024'
+      endDate: 'January 2024',
+      description: `
+        * Was the technical co-founder of a startup that aimed to provide a platform to allow prospective homebuyers to walk through homes (digital twins) before they were built.
+        * Used Unreal Engine 4 and 5 to create an interactive 3D experience.
+        * Developed an online platform that leverages cloud streaming to deliver high-quality 3D content to users, regardless of their device or physical location.
+        * Managed development team and set technical direction.
+        * Developed a custom 3D renderer using WebGL to allow for homes to be virtually staged by interior designers.
+        * Developed an AI assistant to allow users to ask questions about the homes they were viewing. Implemented RAG (Retrieval-Augmented Generation) to generate responses to questions with a high degree of accuracy.
+      `.trim(),
+      videos: [{
+        href: 'chido1.webm',
+        description: 'This video showcases Chido\'s 3D home walkthrough experience from an iPhone, which allows users to walk through homes before they are built. The experience was built using Unreal Engine 5.'
+      },
+      {
+        href: 'chido2.webm',
+        description: 'This video showcases Chido\'s AI assistant, which allows users to ask questions about the homes they are viewing. When the user asks a question the AI does not know the answer to, it will prompt the user to forward the question to the real estate agent in charge of the listing.'
+      }],
+      links: [
+        {
+          name: 'Chido (Archived)',
+          href: 'https://web.archive.org/web/20230629175009/https://chidoapp.com/'
+        }
+      ]
     },
     {
       name: 'CD Projekt Red',
       title: 'Engine Programmer',
       startDate: 'April 2022',
-      endDate: 'April 2023'
+      endDate: 'April 2023',
+      description: `
+        * Worked on the Witcher 3 next-gen update for PC, PS5 and Xbox Series X/S
+        * Implemented ray tracing and other graphical improvements for The Witcher 3 (e.g RTAO, RTGI)
+        * Developed photo mode feature for The Witcher 3
+        * Worked on an unofficially announced game set in the Witcher universe using Unreal Engine 5
+      `.trim(),
+      links: [
+        {
+          name: 'CD Projekt Red',
+          href: 'https://www.cdprojekt.com/en/'
+        }
+      ]
     },
     {
       name: 'Carbide (formerly Securicy)',
       title: 'Team Lead, Software Developer',
       startDate: 'May 2019',
-      endDate: 'Febuary 2022'
+      endDate: 'Febuary 2022',
+      description: `
+        * Developed new features and maintained existing ones for a SaaS platform that helps organizations achieve and maintain compliance with security standards.
+      `.trim(),
+      links: [
+        {
+          name: 'Carbide',
+          href: 'https://carbidesecure.com/'
+        }
+      ]
     },
     {
       name: 'Marcato (Acq. Leap Event Technology)',
       title: 'Software Developer',
       startDate: 'June 2017',
-      endDate: 'March 2019'
+      endDate: 'March 2019',
+      description: `
+        * Developed new features and maintained existing ones for a SaaS platform that allows music festivals to manage their events, artists, and schedules.
+      `.trim(),
+      links: [
+        {
+          name: 'Marcato (Archived)',
+          href: 'https://web.archive.org/web/20190324144345/https://marcatofestival.com/'
+        }
+      ]
     },
     {
       name: 'Bidsquid',
       title: 'CTO / Co-Founder / Lead Developer',
       startDate: 'January 2016',
-      endDate: 'May 2017'
+      endDate: 'May 2017',
+      description: `
+        * Developed an online marketplace to connect buyers and sellers of agricultural goods.
+      `.trim(),
+      links: [
+        {
+          name: 'Bidsquid (Archived)',
+          href: 'https://web.archive.org/web/20190122031746/https://bidsquid.com/'
+        }
+      ]
     }
   ],
   skills: [

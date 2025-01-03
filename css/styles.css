@@ -70,8 +70,32 @@ ul.occupations {
 body.dark .occupations li {
     border-color: #555;
 }
+
+.occupations li .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 10px;
+}
+.occupations li .links a {
+    border-radius: 12px;
+    font-size: 12px;
+    display: inline-block;
+    padding: 4px 10px;
+    margin-right: 3px;
+    background: #ef545c;
+    color: #fff;
+}
+body.dark .occupations li .links a {
+}
+
 .occupations li .project-title {
     margin-bottom: 10px;
+}
+.occupations li .project-title .title-start-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .occupations li > img {
     float: left;
@@ -87,11 +111,19 @@ body.dark .occupations li {
     margin: 0;
     font-size: 0.8em;
 }
-.occupations li > .description {
+.occupations li .text,
+.occupations li .description {
     vertical-align: top;
     padding: 0;
     margin: 0;
     font-size: 0.8em;
+    line-height: 150%;
+}
+.occupations li .description {
+    line-height: 150%;
+}
+.occupations li .description .line {
+    margin: 5px 0;
 }
 
 .top-bar-wrapper {
@@ -166,6 +198,7 @@ body.dark .top-bar {
 }
 #about .header h1 {
     margin: 20px 0;
+    margin-top: 0;
     font-size: 1.5em;
     flex: 1;
     white-space: nowrap;
@@ -212,12 +245,13 @@ body.dark #about .header .subtext {
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); */
     width: 90px;
     height: 90px;
-    margin-right: 20px;
+    margin-right: 25px;
     overflow: hidden;
 }
 
 .avatar {
-    width: 75px;
+    width: 100%;
+    filter: grayscale(35%);
     /* top: 5px; */
     position: relative;
 }
@@ -637,12 +671,12 @@ body.dark .project-circle {
     text-decoration: underline;
 }
 
-.project-circle .previews {
+.previews {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
 }
-.project-circle .previews .preview {
+.previews .preview {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -656,7 +690,6 @@ body.dark .project-circle {
     transition: box-shadow 0.2s ease;
     cursor: pointer;
 }
-
 
 .project-circle.featured .previews {
     display: block;
@@ -686,8 +719,8 @@ body.dark .project-circle {
     border-radius: 3px;
     overflow: hidden;
 }
-.project-circle .previews .preview img,
-.project-circle .previews .preview video {
+.previews .preview img,
+.previews .preview video {
     height: 100%;
 }
 
