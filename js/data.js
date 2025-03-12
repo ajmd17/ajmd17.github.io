@@ -4,8 +4,9 @@ var PORTFOLIO_DATA = {
     title: 'Hyperion Game Engine',
     featured: true,
     description: '3D game engine written in C++. Rendering primarily uses a Vulkan backend. Oodles of features, such as:<br>\
+      &bull;&nbsp;Entity component system (ECS)<br>\
       &bull;&nbsp;Custom UI library, built from scratch<br>\
-      &bull;&nbsp;4 global illumination techniques<br>\
+      &bull;&nbsp;4 global illumination techniques (Light field probes, spherical harmonics probes, dynamic diffuse global illumination (DDGI), voxel cone tracing<br>\
       &bull;&nbsp;Hardware ray tracing support + path tracing<br>\
       &bull;&nbsp;Post processing effects, such as screen space reflections, SSAO, temporal anti-aliasing<br>\
       &bull;&nbsp;Physically based shading / PBR material system<br>\
