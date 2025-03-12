@@ -1,20 +1,6 @@
 var PORTFOLIO_DATA = {
   articles: [],
   projects: [{
-    title: 'Beacon AI Coding Tool',
-    featured: true,
-    tags: ['TypeScript', 'Python', 'Machine Learning'],
-    videos: [{
-      href: 'beacon1.webm',
-      description: 'This video showcases the Beacon AI coding tool, which provides code suggestions and completions in editor. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.'
-    }],
-    description: `
-      An alternative to GitHub Copilot I built to allow usage of locally ran language models. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.<br>
-      &bull;&nbsp;Built using TypeScript for the Visual Studio Code extension, and Python for the backend and interfacing with AI models.<br>
-      &bull;&nbsp;Has the ability to swap out AI models, and supports multiple languages.<br>
-    `.trim()
-  },
-  {
     title: 'Hyperion Game Engine',
     featured: true,
     description: '3D game engine written in C++. Rendering primarily uses a Vulkan backend. Oodles of features, such as:<br>\
@@ -49,6 +35,20 @@ var PORTFOLIO_DATA = {
         href: 'https://github.com/notomorrow/hyperion-engine'
       }
     ]
+  },
+  {
+    title: 'Beacon AI Coding Tool',
+    featured: true,
+    tags: ['TypeScript', 'Python', 'Machine Learning'],
+    videos: [{
+      href: 'beacon1.webm',
+      description: 'This video showcases the Beacon AI coding tool, which provides code suggestions and completions in editor. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.'
+    }],
+    description: `
+      An alternative to GitHub Copilot I built to allow usage of locally ran language models. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.<br>
+      &bull;&nbsp;Built using TypeScript for the Visual Studio Code extension, and Python for the backend and interfacing with AI models.<br>
+      &bull;&nbsp;Has the ability to swap out AI models, and supports multiple languages.<br>
+    `.trim()
   },
   /*{
     title: 'BidSquid Online Marketplace',
