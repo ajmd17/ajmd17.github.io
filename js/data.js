@@ -178,8 +178,11 @@ var PORTFOLIO_DATA = {
       startDate: 'March 2024',
       endDate: 'Present',
       description: `
-        * Currently working on a new game project using Unreal Engine 5
-        * Focused on rendering and engine tools.
+        - Developed editor tools for Unreal Engine 5 to assist in game development
+        - Led development of multiple projects 
+        - Various tasks related to rendering
+        - Optimization of game performance
+        - Solved crashes and out of memory issues
       `.trim(),
       links: [
         {
@@ -194,12 +197,12 @@ var PORTFOLIO_DATA = {
       startDate: 'January 2023',
       endDate: 'January 2024',
       description: `
-        * Was the technical co-founder of a startup that aimed to provide a platform to allow prospective homebuyers to walk through homes (digital twins) before they were built.
-        * Used Unreal Engine 4 and 5 to create an interactive 3D experience.
-        * Developed an online platform that leverages cloud streaming to deliver high-quality 3D content to users, regardless of their device or physical location.
-        * Managed development team and set technical direction.
-        * Developed a custom 3D renderer using WebGL to allow for homes to be virtually staged by interior designers.
-        * Developed an AI assistant to allow users to ask questions about the homes they were viewing. Implemented RAG (Retrieval-Augmented Generation) to generate responses to questions with a high degree of accuracy.
+        - Developed cloud streaming platform for Unreal Engine 5 w/ WebRTC
+        - Designed and developed Unreal Engine plugins to improve artist workflow
+        - Built a rendering engine using WebGL, supporting 3D Gaussian Splatting
+        - Used machine learning to automate 3D model creation of scanned rooms
+        - Integrated RAG into Chido's AI assistant
+
       `.trim(),
       videos: [{
         href: 'chido1.webm',
@@ -222,10 +225,11 @@ var PORTFOLIO_DATA = {
       startDate: 'April 2022',
       endDate: 'April 2023',
       description: `
-        * Worked on the Witcher 3 next-gen update for PC, PS5 and Xbox Series X/S
-        * Implemented ray tracing and other graphical improvements for The Witcher 3 (e.g RTAO, RTGI)
-        * Developed photo mode feature for The Witcher 3
-        * Worked on an unofficially announced game set in the Witcher universe using Unreal Engine 5
+        - Rendering focused tasks for The Witcher 3 next gen, such as ray tracing, using DirectX 12
+        - Implemented photomode into The Witcher 3
+        - Optimizing game performance on Playstation 5
+        - Assisted with multiplayer tasks on Project Sirius using Unreal Engine
+
       `.trim(),
       links: [
         {
@@ -240,7 +244,10 @@ var PORTFOLIO_DATA = {
       startDate: 'May 2019',
       endDate: 'Febuary 2022',
       description: `
-        * Developed new features and maintained existing ones for a SaaS platform that helps organizations achieve and maintain compliance with security standards.
+        - Development and maintenance of Rails web app
+        - Led development of several projects and features
+        - Team lead of integrations
+
       `.trim(),
       links: [
         {
@@ -255,7 +262,7 @@ var PORTFOLIO_DATA = {
       startDate: 'June 2017',
       endDate: 'March 2019',
       description: `
-        * Developed new features and maintained existing ones for a SaaS platform that allows music festivals to manage their events, artists, and schedules.
+        - Developed and maintained Rails web app, used by organizers of music festival leaders such as Burning Man and Coachella
       `.trim(),
       links: [
         {
