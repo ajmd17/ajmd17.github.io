@@ -5,62 +5,47 @@ var PORTFOLIO_DATA = {
       title: 'Hyperion Game Engine',
       featured: true,
       description:
-          '3D game engine written in C++. Rendering primarily uses a Vulkan backend. Oodles of features, such as:<br>\
-      &bull;&nbsp;Entity component system (ECS)<br>\
-      &bull;&nbsp;Custom UI library, built from scratch<br>\
-      &bull;&nbsp;4 global illumination techniques (Light field probes, spherical harmonics probes, dynamic diffuse global illumination (DDGI), voxel cone tracing<br>\
-      &bull;&nbsp;Hardware ray tracing support + path tracing<br>\
-      &bull;&nbsp;Post processing effects, such as screen space reflections, SSAO, temporal anti-aliasing<br>\
-      &bull;&nbsp;Physically based shading / PBR material system<br>\
-      &bull;&nbsp;GPU-based occlusion culling<br>\
-      &bull;&nbsp;Advanced async job system for multi-threading<br>\
-      &bull;&nbsp;.NET Core integration for C# scripting<br>\
-      &bull;&nbsp;GPU particle simulation<br>\
-      and a lot more, you should check it out on GitHub! https://github.com/notomorrow/hyperion-engine',
+          '3D game engine written in C++, with Vulkan and DirectX 12 rendering backends.<br>\
+      &bull;&nbsp;Visual editor with scene editing, asset importing, and an offline light baking system.<br>\
+      &bull;&nbsp;Clustered deferred shading supporting many dynamic lights, real-time path tracer, and DDGI.<br>\
+      &bull;&nbsp;Custom shader compiler with automatic permutation support, level streaming, and a scripting system.<br>\
+      &bull;&nbsp;C# and HypScript scripting with hot reloading for fast iteration.',
       tags: ['C++', 'C#', 'Vulkan'],
       img: [
         {
-          href: 'hyp-rt.png',
-          description:
-              'This image showcases the ray tracing implementation in Hyperion, used to compute real-time reflections using ray tracing hardware on modern graphics cards.<br><br>Scene: Pica Pica'
-        },
-        {
-          href: 'hyp-parallax.png',
-          description:
-              'This image showcases the parallax occlusion mapping implementation in Hyperion.<br><br>Scene: Sponza Atrium'
-        },
-        'chapel.jpg'
-      ],
-      videos: [
-        {
-          href: 'hyp-ddgi.mp4',
-          description:
-              'This video shows the dynamic diffuse global illumination (DDGI) technique as implemented by myself in my game engine, Hyperion.<br><br>DDGI is a modern global illumination technique which uses hardware ray tracing to compute indirect diffuse lighting.<br><br>Scene: Sponza Atrium'
-        },
-        {
-          href: 'hyp-particles.mp4',
-          description:
-              'This video shows the GPU particle system in Hyperion. Particles are simulated on the GPU using compute shaders.<br><br>Scene: Sponza Atrium'
+          href: 'hyp-editor.png',
+          description: 'Screenshot of the Hyperion Editor, showing the rendering of a Sponza Atrium scene'
         }
       ],
+      videos: [
+        // {
+        //   href: 'hyp-ddgi.mp4',
+        //   description:
+        //       'This video shows the dynamic diffuse global illumination (DDGI) technique as implemented by myself in my game engine, Hyperion.<br><br>DDGI is a modern global illumination technique which uses hardware ray tracing to compute indirect diffuse lighting.<br><br>Scene: Sponza Atrium'
+        // },
+        // {
+        //   href: 'hyp-particles.mp4',
+        //   description:
+        //       'This video shows the GPU particle system in Hyperion. Particles are simulated on the GPU using compute shaders.<br><br>Scene: Sponza Atrium'
+        // }
+      ],
       links: [
-        {name: 'GitHub', href: 'https://github.com/notomorrow/hyperion-engine'}
+        {name: 'GitHub', href: 'https://github.com/HyperionGameTech/HyperionEngine'}
       ]
     },
     {
-      title: 'Beacon AI Coding Tool',
+      title: 'Beacon - Open Source AI Agent',
       featured: true,
       tags: ['TypeScript', 'Python', 'Machine Learning'],
       videos: [{
-        href: 'beacon1.webm',
+        href: 'beacon-clip.webm',
         description:
-            'This video showcases the Beacon AI coding tool, which provides code suggestions and completions in editor. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.'
+            'This video showcases the Beacon AI agent harness. The tool is designed to help developers write code faster by providing code suggestions and completions in editor as well as an interactive chat API.',
       }],
-      description: `
-      An alternative to GitHub Copilot I built to allow usage of locally ran language models. The tool is designed to help developers write code faster by providing code suggestions and completions in editor.<br>
-      &bull;&nbsp;Built using TypeScript for the Visual Studio Code extension, and Python for the backend and interfacing with AI models.<br>
-      &bull;&nbsp;Has the ability to swap out AI models, and supports multiple languages.<br>
-    `.trim()
+      description: 'AI Agent coding harness, allowing usage of any OpenAI-compatible API usage of locally ran language models. The tool is designed to help developers write code faster by providing a full streamlined agent as well as inline completions for FIM-supported models such as Qwen 3.',
+      links: [
+        {name: 'GitHub', href: 'https://github.com/ajmd17/BeaconAI'}
+      ]
     },
     /*{
       title: 'BidSquid Online Marketplace',
@@ -192,7 +177,7 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       endDate: 'April 2025',
       description: `
         - Developed editor tools for Unreal Engine 5 to assist in game development
-        - Led development of multiple projects 
+        - Led development of multiple projects
         - Various tasks related to rendering
         - Optimization of game performance
         - Solved crashes and out of memory issues
