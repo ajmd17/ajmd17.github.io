@@ -482,12 +482,15 @@ body.dark .skills li {
     /*height: 50%;*/
     margin-top: 0;
 }
+
 .page.half .page-content {
-    /*height: calc(100% - 100px);*/
-    /*overflow-y: scroll;*/
+    margin-bottom: 1rem;
     border-radius: 5px;
-    
 }
+.page.half .page-content:last-of-type {
+    margin-bottom: 2rem;
+}
+
 .page.half .top-bar {
     padding: 0;
     /* text-align: center; */
@@ -558,6 +561,14 @@ body.dark .project-circle {
     align-items: center;
     justify-content: space-between;
 }
+
+
+.project-circle .project-title.devlog {
+    font-size: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .project-circle .project-title .tags {
     display: flex;
     flex-direction: row;

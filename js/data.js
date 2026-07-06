@@ -10,7 +10,7 @@ var PORTFOLIO_DATA = {
       &bull;&nbsp;Clustered deferred shading supporting many dynamic lights, real-time path tracer, and DDGI.<br>\
       &bull;&nbsp;Custom shader compiler with automatic permutation support, level streaming, and a scripting system.<br>\
       &bull;&nbsp;C# and HypScript scripting with hot reloading for fast iteration.',
-      tags: ['C++', 'C#', 'Vulkan'],
+      tags: ['C++', 'C#', 'Vulkan', 'DirectX 12'],
       img: [
         {
           href: 'hyp-editor.png',
@@ -31,20 +31,6 @@ var PORTFOLIO_DATA = {
       ],
       links: [
         {name: 'GitHub', href: 'https://github.com/HyperionGameTech/HyperionEngine'}
-      ]
-    },
-    {
-      title: 'Beacon - Open Source AI Agent',
-      featured: true,
-      tags: ['TypeScript', 'Python', 'Machine Learning'],
-      videos: [{
-        href: 'beacon-clip.webm',
-        description:
-            'This video showcases the Beacon AI agent harness. The tool is designed to help developers write code faster by providing code suggestions and completions in editor as well as an interactive chat API.',
-      }],
-      description: 'AI Agent coding harness, allowing usage of any OpenAI-compatible API usage of locally ran language models. The tool is designed to help developers write code faster by providing a full streamlined agent as well as inline completions for FIM-supported models such as Qwen 3.',
-      links: [
-        {name: 'GitHub', href: 'https://github.com/ajmd17/BeaconAI'}
       ]
     },
     /*{
@@ -133,16 +119,30 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       title: 'HypScript',
       tags: ['C++'],
       description:
-          'Progrmaming language written from scratch in C++. Includes bytecode language and virtual machine with garbage collection.',
+          'A programming language written from scratch in C++. Includes bytecode language and virtual machine with garbage collection.',
       links: [{name: 'GitHub', href: 'https://github.com/notomorrow/hypscript'}]
     },
     {
-      title: 'Helios Engine',
+      title: 'Gaussian Splatting',
       description:
-          'A smaller, WebGL rendering engine written in TypeScript with some WebAssembly (Rust). Includes a simple scene graph, PBR, post-processing, a 3D Gaussian Splatting implementation and more.',
+          'A WebGL renderer written in TypeScript and Rust. Includes a simple scene graph, PBR, post-processing, a 3D Gaussian Splatting implementation and more.',
       tags: ['TypeScript', 'WebGL', 'Rust', 'WebAssembly'],
       img: ['helios_1.png'],
       links: [{name: 'GitHub', href: 'https://github.com/ajmd17/helios'}]
+    },
+    {
+      title: 'Beacon - Open Source AI Agent',
+      featured: true,
+      tags: ['TypeScript', 'Machine Learning'],
+      videos: [{
+        href: 'beacon-clip.webm',
+        description:
+            'This video showcases the Beacon AI agent harness. The tool is designed to help developers write code faster by providing code suggestions and completions in editor as well as an interactive chat API.',
+      }],
+      description: 'AI Agent coding harness, allowing usage of any OpenAI-compatible API usage of locally ran language models. The tool is designed to help developers write code faster by providing a full streamlined agent as well as inline completions for FIM-supported models such as Qwen 3.',
+      links: [
+        {name: 'GitHub', href: 'https://github.com/ajmd17/BeaconAI'}
+      ]
     },
     {
       title: 'BlockML - Component Language',
@@ -165,7 +165,7 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'May 2025',
       endDate: 'Present',
       description: `
-        - Working on rendering and engine features for Warframe using C++ and Vulkan (proprietary engine), primarily focused on Android and iOS platforms
+        - Working on rendering and engine features and bug fixes for Warframe using C++ and Vulkan (proprietary engine), primarily focused on Android and iOS platforms
       `.trim(),
       links:
           [{name: 'Digital Extremes', href: 'https://www.digitalextremes.com/'}]
@@ -271,8 +271,8 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
     }
   ],
   skills: [
-    'GPU programming', 'Full-stack software development', 'Machine learning',
-    'Game engines', 'C++', 'C#', 'JavaScript', 'Python', 'Ruby on Rails',
-    'Node.js', 'React.js', 'TypeScript', 'AWS', 'C', 'Git'
+    'Game Engines', 'C++', 'C', 'Systems programming',
+    'Shaders', 'Graphics Programming', 'C#',
+    'Compiler Development', 'Programming Language Design'
   ]
 }
