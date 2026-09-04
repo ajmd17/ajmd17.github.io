@@ -250,9 +250,9 @@ body.dark #about .header .subtext {
 }
 
 .avatar {
-    width: 100%;
+    width: 115%;
     filter: grayscale(35%);
-    /* top: 5px; */
+    top: 5px;
     position: relative;
 }
 
@@ -394,11 +394,14 @@ body.dark #email-address-box {
 }
 .profile-link img {
     float: left;
-    height: 32px;
+    height: 30px;
     /* margin-right: 5px; */
 }
 body.dark .profile-link img {
     filter: invert(100%);
+}
+.profile-link:hover {
+    text-decoration: none;
 }
 .profile-link a {
 }
