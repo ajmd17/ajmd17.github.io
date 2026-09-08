@@ -685,6 +685,25 @@ body.dark .project-circle {
     text-decoration: underline;
 }
 
+.latest-post {
+    display: block;
+    margin-top: 14px;
+}
+.latest-post .latest-post-title {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+.latest-post .latest-post-date {
+    display: block;
+    color: #888;
+    font-size: 0.8em;
+    margin-top: 2px;
+}
+body.dark .latest-post .latest-post-date {
+    color: #999;
+}
+
 .previews {
     display: flex;
     flex-direction: row;
