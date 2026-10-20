@@ -1,416 +1,237 @@
+const EMAIL_ADDRESS = ['mail', 'ajmd.dev'].join('@');
 
+const ICONS = {
+    moon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></svg>'
+};
 
-const BY_YEAR = false;
-const EMAIL_ADDRESSES = [
-    'm' + 'a' + 'i' + 'l' + '@' + 'a' + 'j' + 'm' + 'd' + '.dev',
-    'a' + 'n' + 'd' + 'r' + 'e' + 'w' + 'm' + 'a' + 'c' + 'd' + 'o' + 'n' + 'a' + 'l' + 'd' + '9' + '7' + '1' + '@' + 'g' + 'm' + 'a' + 'i' + 'l' + '.c' + 'o' + 'm'
-];
-
-function memoize(method) {
-    const keyArray = [],
-          resultsArray = []
-
-    const findMemoizedArgsIndex = (args) => {
-        for (let i = 0; i < keyArray.length; i++) {
-            let keys = keyArray[i],
-                matches = true
-
-
-            if (keys.length != args.length) {
-                continue
-            }
-
-            for (let j = 0; j < keys.length; j++) {
-                if (keys[j] !== args[j]) {
-                    matches = false
-                    break
-                }
-            }
-
-            if (matches) {
-                return i
-            }
-        }
-
-        return -1
-    }
-
-    return function (...args) {
-        const index = findMemoizedArgsIndex(args)
-
-        if (index === -1) {
-            keyArray.push(args)
-
-            const result = method(...args)
-
-            resultsArray.push(result)
-
-            return result
-        }
-
-        return resultsArray[index]
-    }
+function isExternal(href) {
+    return /^https?:\/\//.test(href);
 }
 
-const previewModalInstance = new class PreviewModal {
-    constructor() {
-        this._element = null
-        this._backdrop = null
-        this._content = null
-    }
+function renderLink(link) {
+    const target = isExternal(link.href) ? ' target="_blank" rel="noopener"' : '';
+    const arrow = isExternal(link.href) ? '<span class="arrow" aria-hidden="true">&#8599;</span>' : '';
 
-    bindEvents() {
-        this.content.click((e) => {
-            e.stopPropagation()
-        })
-        
-        this.backdrop.click((e) => {
-            this.hide()
-        })
-
-        this.closeButton.click((e) => {
-            if (e) {
-                e.preventDefault()
-            }
-
-            this.hide()
-        })
-    }
-
-    hide() {
-        this.element.hide()
-
-        this._enableScroll()
-    }
-
-    /**
-     * 
-     * @param {*} item 
-     * @param {string} href 
-     * @param {'img' | 'video'} type 
-     * @param {object} [options]
-     */
-    show(item, href, type = 'img', options = undefined) {
-        this.hide();
-
-        this.element.attr('data-mode', type);
-        this.element.find('.description').html((options && options.description) ? options.description : '');
-
-        if (type === 'img') {
-            const $previewImg = this.element.find('.preview-img')
-            $previewImg[0].src = `img/preview/${href}` 
-        } else if (type === 'video') {
-            const $previewVideo = this.element.find('.preview-video')
-            $previewVideo[0].src = `img/preview/${href}` 
-        }
-    
-        this.element.show()
-
-        this._disableScroll()
-    }
-
-    _enableScroll() {
-        document.body.style.overflow = ''
-    }
-
-    _disableScroll() {
-        document.body.style.overflow = 'hidden'
-    }
-
-    get closeButton() {
-        return this._closeButton || (this._closeButton = this.element.find('.modal-close'))
-    }
-
-    get content() {
-        return this._content || (this._content = this.element.find('.modal-content'))
-    }
-
-    get backdrop() {
-        return this._backdrop || (this._backdrop = this.element.find('.modal-backdrop'))
-    }
-
-    get element() {
-        return this._element || (this._element = $('#preview-modal'))
-    }
+    return `<a href="${link.href}"${target}>${link.name}${arrow}</a>`;
 }
 
-/** @param {string} text */
-function renderLinksAsHtml(text) {
-    const patterns = [
-        [/(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim, '<a href="$1" target="_blank">$1</a>'],
-        [/(^|[^\/])(www\.[\S]+(\b|$))/gim,'$1<a href="http://$2" target="_blank">$2</a>']
-    ]
+function collectMedia(item) {
+    const toMedia = (type) => (entry) => ({
+        type,
+        href: typeof entry === 'string' ? entry : entry.href,
+        description: typeof entry === 'string' ? '' : (entry.description || '')
+    });
 
-    return patterns.reduce((previousValue, currentValue) => {
-        return previousValue.replace(currentValue[0], currentValue[1])
-    }, text)
+    return [
+        ...(item.img || []).map(toMedia('img')),
+        ...(item.videos || []).map(toMedia('video'))
+    ];
 }
 
-function buildPreviews(item) {
-    if (item.img || item.videos) {
-        const $previews = $('<div class="previews"></div>');
+function renderMediaItem(media) {
+    const src = `img/preview/${media.href}`;
+    const label = media.description ? media.description.replace(/<[^>]+>/g, '').replace(/"/g, '&quot;') : 'View full size';
+    const inner = media.type === 'video'
+        ? `<video src="${src}" muted autoplay loop playsinline preload="metadata"></video>`
+        : `<img src="${src}" alt="${label}" loading="lazy">`;
 
-        if (item.videos) {
-            for (let element of item.videos) {
-                const href = typeof element === 'string' ? element : element.href;
-                const description = typeof element === 'string' ? '' : element.description;
-
-                $previews.append($('<div class="preview"></div>')
-                    .append($(`<video muted autoplay loop src="img/preview/${href}"></video>`))
-                    .click(function () {
-                        previewModalInstance.show(item, href, 'video', {
-                            description
-                        });
-                    }))
-            }
-        }
-
-        if (item.img) {
-            for (let element of item.img) {
-                const href = typeof element === 'string' ? element : element.href;
-                const description = typeof element === 'string' ? '' : element.description;
-
-                $previews.append($('<div class="preview"></div>')
-                    .append($(`<img src="img/preview/${href}">`))
-                    .click(function () {
-                        previewModalInstance.show(item, href, 'img', {
-                            description
-                        });
-                    }))
-            }
-        }
-
-        return $previews;
-    }
-
-    return null;
+    return `<button type="button" class="media-item" data-type="${media.type}" data-src="${src}" aria-label="${label}">${inner}</button>`;
 }
 
-function buildPortfolioItem(item) {
-    const $card = $('<div class="project-circle"></div>')
-
-    if (item.featured) {
-        $card.addClass('featured');
+function renderMedia(mediaList, featured) {
+    if (!mediaList.length) {
+        return '';
     }
 
-    if (item.wip || item.small) {
-        $card.addClass('small')
+    if (!featured) {
+        return `<div class="media media-mini">${mediaList.map(renderMediaItem).join('')}</div>`;
     }
 
-    const $header = $('<div class="project-header"></div>')
-
-    let itemTitle = item.title
-
-    // if ('links' in item) {
-    //     let mainLink = item.links.find((link) => link.main)
-
-    //     if (mainLink) {
-    //         itemTitle = `<a href="${mainLink.href}" target="_blank">${item.title}</a>`
-    //     }
-    // }
-
-    const $projectTitle = $('<div class="project-title">');
-
-    if (item.links && item.links[0] && item.titleLink !== false) {
-        $projectTitle.append(`<h3><a href="${item.links[0].href}" target="_blank">${itemTitle}${item.wip ? ' (WIP)' : ''}</a></h3>`)
-    } else {
-        $projectTitle.append(`<h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3>`)
+    if (mediaList.length === 1) {
+        return `<div class="media media-single">${renderMediaItem(mediaList[0])}</div>`;
     }
 
-    if ('tags' in item && item.tags.length) {
-        const $tags = $('<div class="tags">')
-
-        item.tags.forEach((tag) => {
-            $tags.append(`<div class="tag">${tag}</div>`)
-        })
-
-        $projectTitle.append($tags)
+    if (mediaList.length === 2) {
+        return `<div class="media media-pair">${mediaList.map(renderMediaItem).join('')}</div>`;
     }
 
-    $header.append($projectTitle)
+    const [hero, ...rest] = mediaList;
 
-    if (item.stat) {
-        $header.append(`<div class="stat"><i class="fas fa-star"></i> ${item.stat}</div>`)
-    }
+    return `<div class="media media-hero">${renderMediaItem(hero)}</div>` +
+        `<div class="media media-thumbs">${rest.map(renderMediaItem).join('')}</div>`;
+}
 
-    $header.append(`<p class="description">${renderLinksAsHtml(item.description)}</p>`)
+function renderProject(item) {
+    const featured = !!item.featured;
+    const links = item.links || [];
+    const titleHref = item.titleLink !== false && links[0] ? links[0].href : null;
+    const title = titleHref
+        ? `<a href="${titleHref}"${isExternal(titleHref) ? ' target="_blank" rel="noopener"' : ''}>${item.title}</a>`
+        : item.title;
 
-    if (item.bullets) {
-        $header.append(`<ul class="description bullets">${item.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}</ul>`)
-    }
+    const media = collectMedia(item);
+    const mediaFirst = featured;
+
+    const body = `
+        <div class="project-body">
+            <h3 class="project-title">${title}</h3>
+            ${item.tags && item.tags.length ? `<ul class="tags">${item.tags.map((tag) => `<li>${tag}</li>`).join('')}</ul>` : ''}
+            ${item.stat ? `<p class="stat">${item.stat}</p>` : ''}
+            <p class="project-description">${item.description}</p>
+            ${item.bullets ? `<ul class="bullets">${item.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}</ul>` : ''}
+            ${item.code ? '<pre class="code"></pre>' : ''}
+            ${!mediaFirst ? renderMedia(media, false) : ''}
+            ${links.length ? `<div class="project-links">${links.map(renderLink).join('')}</div>` : ''}
+        </div>`;
+
+    const article = document.createElement('article');
+    article.className = featured ? 'project project-featured' : 'project';
+    article.innerHTML = (mediaFirst ? renderMedia(media, true) : '') + body;
 
     if (item.code) {
-        $header.append($('<pre class="code"></pre>').text(item.code))
+        article.querySelector('pre.code').textContent = item.code;
     }
 
-    $card.append($header)
-
-    const $previews = buildPreviews(item);
-
-    if ($previews !== null) {
-        $card.append($previews);
-    }
-
-    if ('links' in item) {
-        const $links = $(`<div class="links"></div>`)
-
-        for (let link of item.links) {
-            $links.append(`<a href="${link.href}" target="_blank">${link.name}</a>`)
-        }
-
-        $card.append($links)
-    }
-
-    return $card
+    return article;
 }
 
-function buildPortfolioItems() {
-    const $container = $('#portfolio-container')
-    $container.html('')
+function renderJob(job) {
+    const link = job.links && job.links[0];
+    const name = link
+        ? `<a href="${link.href}" target="_blank" rel="noopener">${job.name}</a>`
+        : job.name;
 
-    if (BY_YEAR) {
-        const projectKeysSorted = Object.keys(PORTFOLIO_DATA.projects).sort((a, b) => Number(b) - Number(a))
+    const points = (job.description || '')
+        .split('\n')
+        .map((line) => line.trim().replace(/^[-*]\s*/, ''))
+        .filter(Boolean);
 
-        projectKeysSorted.forEach((key) => {
-            const $yearContainer = $('<div class="year-container"></div>')
-
-            $yearContainer.append(`<h3>${key}</h3>`)
-
-            PORTFOLIO_DATA.projects[key].forEach((item) => {
-                $yearContainer.append(buildPortfolioItem(item))
-            })
-
-            $container.append($yearContainer)
-        })
-    } else {
-        PORTFOLIO_DATA.projects.forEach((item) => {
-            $container.append(buildPortfolioItem(item))
-        })
-    }
-}
-
-function buildEmploymentItems() {
-    const $container = $('.employment-container');
-    let $ul = $container.find('ul');
-
-    if (!$ul.length) {
-        $ul = $('<ul class="occupations"></ul>');
-        $container.append($ul);
-    }
-
-    $ul.html('');
-
-    PORTFOLIO_DATA.jobs.forEach((item) => {
-        const $li = $('<li></li>');
-
-        $li.append(`
-            <div class="project-title">
-                <h3>${item.name}</h3>
-                <div class="title-start-end">
-                    <p class="text">${item.title}</p>
-                    <p class="text">${item.startDate} &ndash; ${item.endDate}</p>
-                </div>
+    const article = document.createElement('article');
+    article.className = 'job';
+    article.innerHTML = `
+        <div class="job-head">
+            <div>
+                <h3 class="job-company">${name}</h3>
+                <p class="job-role">${job.title}</p>
             </div>
-            ${item.description ? `<ul class="description">${item.description.split('\n').map(str => str.trim().replace(/^[-*]\s*/, '')).filter(Boolean).map(str => `<li class="line">${str}</li>`).join('')}</ul>` : ''}
-            ${item.links ? `<div class="links">${item.links.map((link) => `<a href="${link.href}" target="_blank">${link.name}&nbsp;&nbsp;<i class="fas fa-external-link-square-alt"></i></a>`).join('')}</div>` : ''}
-        `);
+            <p class="job-dates">${job.startDate} &ndash; ${job.endDate}</p>
+        </div>
+        ${points.length ? `<ul class="bullets">${points.map((point) => `<li>${point}</li>`).join('')}</ul>` : ''}
+        ${renderMedia(collectMedia(job), false)}`;
 
-        const $previews = buildPreviews(item);
-
-        if ($previews !== null) {
-            $li.append($previews);
-        }
-
-        $ul.append($li);
-    });
+    return article;
 }
 
-function buildSkills() {
-    const $container = $('.skills-container');
-    let $ul = $container.find('ul');
+function renderPortfolio() {
+    const featured = document.getElementById('featured-projects');
+    const more = document.getElementById('more-projects');
+    const jobs = document.getElementById('jobs');
+    const skills = document.getElementById('skills-list');
 
-    if (!$ul.length) {
-        $ul = $('<ul class="skills"></ul>');
-        $container.append($ul);
+    featured.innerHTML = '';
+    more.innerHTML = '';
+
+    PORTFOLIO_DATA.projects.forEach((item) => {
+        (item.featured ? featured : more).appendChild(renderProject(item));
+    });
+
+    if (!more.children.length) {
+        document.querySelector('.subsection-title').remove();
     }
 
-    $ul.html('');
+    PORTFOLIO_DATA.jobs.forEach((job) => jobs.appendChild(renderJob(job)));
 
-    PORTFOLIO_DATA.skills.forEach((skill) => {
-        const $skill = $(`<li>${skill}</li>`);
+    skills.innerHTML = PORTFOLIO_DATA.skills.map((skill) => `<li>${skill}</li>`).join('');
+}
 
-        $ul.append($skill);
+function initLightbox() {
+    const dialog = document.getElementById('lightbox');
+    const img = dialog.querySelector('.lightbox-img');
+    const video = dialog.querySelector('.lightbox-video');
+    const caption = dialog.querySelector('.lightbox-caption');
+
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('.media-item');
+
+        if (!trigger) {
+            return;
+        }
+
+        const isVideo = trigger.dataset.type === 'video';
+        const label = trigger.getAttribute('aria-label');
+
+        dialog.dataset.mode = isVideo ? 'video' : 'img';
+        caption.textContent = label === 'View full size' ? '' : label;
+
+        if (isVideo) {
+            img.removeAttribute('src');
+            video.src = trigger.dataset.src;
+            video.play().catch(() => {});
+        } else {
+            video.removeAttribute('src');
+            img.src = trigger.dataset.src;
+            img.alt = caption.textContent;
+        }
+
+        dialog.showModal();
+    });
+
+    dialog.addEventListener('click', (e) => {
+        if (e.target === dialog || e.target.closest('.lightbox-close')) {
+            dialog.close();
+        }
+    });
+
+    dialog.addEventListener('close', () => {
+        video.pause();
     });
 }
 
-function addEscKeyListener() {
-    $(document).keyup(function (e) {
-        if (e.key === 'Escape') {
-            previewModalInstance.hide()
-        }
-    })
-}
+function initThemeToggle() {
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-$(document).ready(function () {
-    addEscKeyListener();
+    const currentTheme = () => root.getAttribute('data-theme') || (prefersDark.matches ? 'dark' : 'light');
+    const updateIcon = () => {
+        button.innerHTML = currentTheme() === 'dark' ? ICONS.sun : ICONS.moon;
+    };
 
-    buildPortfolioItems();
-    buildEmploymentItems();
-    buildSkills();
+    button.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
 
-    setTimeout(() => {
-        const $contactMeButton = $('#contact-me-button');
-
-        if ($contactMeButton.length) {
-            $contactMeButton.attr('href', `mailto:${EMAIL_ADDRESSES[0]}`);
-        }
-    }, 10);
-
-    previewModalInstance.bindEvents()
-
-    var $nightModeBtn = $('#night-mode-btn');
-
-
-    function isDarkModeEnabled() {
-        let saved = null;
+        root.setAttribute('data-theme', next);
 
         try {
-            saved = localStorage.getItem('theme');
+            localStorage.setItem('theme', next);
         } catch (e) {}
 
-        if (saved) {
-            return saved === 'dark';
+        updateIcon();
+    });
+
+    prefersDark.addEventListener('change', updateIcon);
+    updateIcon();
+}
+
+function initEmailLink() {
+    const link = document.getElementById('email-link');
+    const label = document.getElementById('email-label');
+
+    link.addEventListener('click', (e) => {
+        if (link.getAttribute('href') === '#') {
+            e.preventDefault();
+            link.href = `mailto:${EMAIL_ADDRESS}`;
+            label.textContent = EMAIL_ADDRESS;
         }
-
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-
-    function setDarkMode(enabled) {
-        jQuery('body').toggleClass('dark', enabled);
-        $nightModeBtn.html(enabled ? '<i class="fas fa-sun" ></i>' : '<i class="fas fa-moon" ></i>');
-    }
-
-    setDarkMode(isDarkModeEnabled());
-
-    $nightModeBtn.click(function () {
-        const enabled = !jQuery('body').hasClass('dark');
-
-        setDarkMode(enabled);
-
-        try {
-            localStorage.setItem('theme', enabled ? 'dark' : 'light');
-        } catch (e) {}
     });
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    renderPortfolio();
+    initLightbox();
+    initThemeToggle();
+    initEmailLink();
 
-    $('#send-email-link').click(function (e) {
-        $('#email-address-val').html(EMAIL_ADDRESSES.reduce((previousValue, currentValue, index) => {
-            return previousValue + `<a href="mailto:${currentValue}" target="_blank">${currentValue}</a><br>` + (index < EMAIL_ADDRESSES.length - 1 ? '&nbsp;or&nbsp;' : '')
-        }, ''));
-        $('#email-address-box').show();
-    });
-
-    $('#close-email-box').click(function () {
-        $('#email-address-box').hide();
-    });
+    document.getElementById('year').textContent = new Date().getFullYear();
 });

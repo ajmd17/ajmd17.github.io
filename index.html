@@ -10,6 +10,12 @@
         gtag('js', new Date());
         gtag('config', 'G-WXSHRETYMW');
     </script>
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        } catch (e) {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Andrew MacDonald — Engine &amp; Graphics Programmer</title>
@@ -27,12 +33,6 @@
     <meta property="og:locale:alternate" content="en_CA" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/data.js" type="text/javascript"></script>
 
@@ -40,173 +40,103 @@
 </head>
 
 <body>
-    <div id="main-body-wrapper">
+    <div class="container">
 
-        <div id="night-mode-wrapper">
-            <button id="night-mode-btn" aria-label="Toggle dark mode"></button>
+        <div class="topbar">
+            <nav class="topbar-nav" aria-label="Sections">
+                <a href="#projects">Projects</a>
+                <a href="#devlog">Devlog</a>
+                <a href="#experience">Experience</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
         </div>
 
-        <div class="page" id="about">
-            <div class="page-content">
-                <div class="page-content-inner">
-                    <div class="about">
-                        <div class="header">
-                            <div class="avatar-wrapper fancy-gradient">
-                                <img class="avatar" src="img/me2.jpg" alt="Andrew MacDonald">
-                            </div>
-                            <div class="text">
-                                <h1>Andrew MacDonald</h1>
-                                <div class="subtext">
-                                    Engine &amp; Graphics Programmer
-                                </div>
-
-                                <p class="intro-text">
-                                    I work on rendering and engine tech for Warframe at Digital Extremes,
-                                    and before that on The Witcher 3 next-gen at CD Projekt Red.
-                                    Outside of work I build
-                                    <a href="https://hyperionengine.dev" target="_blank">Hyperion</a>,
-                                    an open-source game engine with 550+ stars on GitHub, and Strata,
-                                    my own programming language.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div id="email-address-box" style="display: none">
-                            You can reach me by email at:
-                            <span id="email-address-val"></span>
-                            <div id="close-email-box-wrapper">
-                                <a id="close-email-box" href="#">
-                                    Close
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="profile-links">
-                            <a href="https://github.com/ajmd17" target="_blank" class="profile-link">
-                                <img src="/img/github.png" alt="GitHub - Andrew MacDonald">
-                                GitHub
-                            </a>
-                            <a href="https://www.linkedin.com/in/andrew-macdonald-136b05110/" target="_blank"
-                                class="profile-link">
-                                <img src="/img/linkedin.png" alt="LinkedIn - Andrew MacDonald">
-                                LinkedIn
-                            </a>
-                            <a href="https://hyperionengine.dev" target="_blank" class="profile-link">
-                                <img src="/img/hyperion.svg" alt="Hyperion Engine">
-                                Hyperion Engine
-                            </a>
-                            <a id="send-email-link" href="#" class="profile-link">
-                                <img src="/img/email.png" alt="Email Me - click to display email address">
-                                Email
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="desktop-only employment-container card no-border">
-                        <div class="title">Employment</div>
-                        <ul class="occupations">
-                            
-                        </ul>
-                    </div>
-
-                    <div class="desktop-only skills-container card no-border">
-                        <div class="title">Skills and Interests</div>
-                        <ul class="skills">
-                            
-                        </ul>
-                    </div>
-
+        <header class="intro">
+            <div class="intro-head">
+                <img class="avatar" src="img/me2.jpg" alt="Andrew MacDonald" width="72" height="72">
+                <div>
+                    <h1>Andrew MacDonald</h1>
+                    <p class="role">Engine &amp; Graphics Programmer</p>
                 </div>
             </div>
-        </div>
 
-        <div class="page half" id="projects">
-            <div class="top-bar-wrapper">
-                <div class="top-bar">
-                    <h3><a href="/blog/" style="color:inherit;text-decoration:none;">Devlog</a></h3>
-                </div>
+            <p class="lede">
+                I work on rendering and engine tech for Warframe at Digital Extremes,
+                and before that on The Witcher 3 next-gen at CD Projekt Red.
+                Outside of work I build
+                <a href="https://hyperionengine.dev" target="_blank" rel="noopener">Hyperion</a>,
+                an open-source game engine with 550+ stars on GitHub, and Strata,
+                my own programming language.
+            </p>
+
+            <nav class="profile-links" aria-label="Profiles">
+                <a href="https://github.com/ajmd17" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/andrew-macdonald-136b05110/" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://hyperionengine.dev" target="_blank" rel="noopener">
+                    <img class="hyperion-icon" src="img/hyperion.svg" alt="" aria-hidden="true">
+                    Hyperion
+                </a>
+                <a id="email-link" href="#">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></svg>
+                    <span id="email-label">Email</span>
+                </a>
+            </nav>
+        </header>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div id="featured-projects">
+                <noscript><p>The project list needs JavaScript. You can find my work on <a href="https://github.com/ajmd17">GitHub</a>.</p></noscript>
             </div>
-            <div class="page-content">
-                <div class="page-content-inner">
-                    <div class="project-circle" style="margin-bottom:0;">
-                        <div class="project-title devlog">
-                            <span class="devlog-tagline">Notes and write-ups from building a game engine.</span>
-                        </div>
+            <h3 class="subsection-title">More projects</h3>
+            <div id="more-projects"></div>
+        </section>
+
+        <section id="devlog" class="section">
+            <div class="section-head">
+                <h2 class="section-title">Devlog</h2>
+                <a href="/blog/">All posts &rarr;</a>
+            </div>
+            <p class="section-lede">Notes and write-ups from building a game engine.</p>
+            <div class="posts">
                         <!-- LATEST_POSTS_START -->
                         <div class="latest-post"><a class="latest-post-title" href="blog/p/bricks-experimental-acceleration-structure.html" target="_blank">A Technique for Faster Software Ray Tracing: Bricks</a><span class="latest-post-date">Oct 20, 2026</span></div>
                         <div class="latest-post"><a class="latest-post-title" href="blog/p/hyperion-layers.html" target="_blank">New Hyperion feature: Layers</a><span class="latest-post-date">Sep 8, 2026</span></div>
                         <div class="latest-post"><a class="latest-post-title" href="blog/p/gaming-on-your-toaster.html" target="_blank">Gaming On Your Toaster</a><span class="latest-post-date">Jul 5, 2026</span></div>
                         <!-- LATEST_POSTS_END -->
-                        <a class="all-posts-link" href="/blog/">All posts &rarr;</a>
-                    </div>
-                </div>
             </div>
+        </section>
 
-            <div class="top-bar-wrapper">
-                <div class="top-bar">
-                    <h3>Projects</h3>
-                </div>
-            </div>
-            <div class="page-content">
-                <div id="portfolio-container" class="page-content-inner">
-                    <div>This content didn't load. Is JavaScript disabled?</div>
-                </div>
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+            <div id="jobs"></div>
+        </section>
 
-                <div class="mobile-only employment-container">
-                    <div class="top-bar-wrapper">
-                        <div class="top-bar">
-                            <h3>Employment</h3>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <ul class="occupations">
-                            <li>This content didn't load. Is JavaScript disabled?</li>
-                        </ul>
-                    </div>
-                </div>
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills</h2>
+            <ul id="skills-list" class="skills"></ul>
+        </section>
 
-                <div class="mobile-only skills-container">
-                    <div class="top-bar-wrapper">
-                        <div class="top-bar">
-                            <h3>Skills and Interests</h3>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <ul class="skills">
-                            <li>This content didn't load. Is JavaScript disabled?</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <footer class="footer">
+            <span>&copy; <span id="year">2026</span> Andrew MacDonald</span>
+            <a href="#">Back to top &uarr;</a>
+        </footer>
     </div>
 
-    <div id="preview-modal" data-mode="img" style="display: none;">
-        <div class="modal-backdrop">
-        </div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="#" class="modal-close">
-                    <i class="fas fa-times"></i>
-                </a>
-            </div>
+    <dialog id="lightbox" class="lightbox">
+        <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+        <img class="lightbox-img" alt="">
+        <video class="lightbox-video" controls loop muted playsinline></video>
+        <p class="lightbox-caption"></p>
+    </dialog>
 
-            <img class="preview-img" />
-            <video class="preview-video" controls loop autoplay muted></video>
-
-            <p class="description"></p>
-
-            <div class="modal-footer">
-                <a href="#" class="modal-close">
-                    Close
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/external/jquery.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/gradient.js" type="text/javascript"></script>
 </body>
 
 </html>
