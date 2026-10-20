@@ -4,17 +4,33 @@ var PORTFOLIO_DATA = {
     {
       title: 'Hyperion Game Engine',
       featured: true,
+      stat: '550+ stars on GitHub',
       description:
-          '3D game engine written in C++, with Vulkan and DirectX 12 rendering backends.<br>\
-      &bull;&nbsp;Visual editor with scene editing, asset importing, and an offline light baking system.<br>\
-      &bull;&nbsp;Clustered deferred shading supporting many dynamic lights, real-time path tracer, and DDGI.<br>\
-      &bull;&nbsp;Custom shader compiler with automatic permutation support, level streaming, and a scripting system.<br>\
-      &bull;&nbsp;C# and HypScript scripting with hot reloading for fast iteration.',
-      tags: ['C++', 'C#', 'Vulkan', 'DirectX 12'],
+          'A full-featured, open-source game engine in C++ that I\'ve been building since 2016, focused on high-fidelity rendering that doesn\'t need high-end hardware.',
+      bullets: [
+        '<b>Glimmer:</b> real-time global illumination and reflections without RT hardware, using software tracing and precomputed radiance transfer so sun and sky changes relight instantly',
+        '<b>DirectX 12, Vulkan and WebGPU</b> backends; the engine also runs in the browser through WebAssembly',
+        'Editor for Windows and macOS with multiplayer play-in-editor, terrain and world-building tools, and an offline lightmapper',
+        'Server-authoritative networking with reflection-driven replication and client-side prediction',
+        'Write games in C# or C++; reflection and code generation provide serialization, editor inspectors, replication and script bindings'
+      ],
+      tags: ['C++', 'C#', 'DirectX 12', 'Vulkan', 'WebGPU'],
       img: [
         {
+          href: 'hyp-glimmer-terrain.jpg',
+          description: 'Terrain, procedural sky and vegetation lit by Glimmer, Hyperion\'s real-time global illumination.'
+        },
+        {
+          href: 'hyp-glimmer-emissives.jpg',
+          description: 'Glimmer bouncing light from emissive objects around the Sponza courtyard, with no ray tracing hardware.'
+        },
+        {
           href: 'hyp-editor.png',
-          description: 'Screenshot of the Hyperion Editor, showing the rendering of a Sponza Atrium scene'
+          description: 'The Hyperion editor with the Sponza Atrium scene.'
+        },
+        {
+          href: 'hyp-multiplayer-editor.jpg',
+          description: 'Multiplayer play-in-editor: the editor running as a client connected to a server.'
         }
       ],
       videos: [
@@ -31,7 +47,68 @@ var PORTFOLIO_DATA = {
       ],
       links: [
         {name: 'Website', href: 'https://hyperionengine.dev'},
+        {name: 'Play the sample game in your browser', href: 'https://hyperionengine.dev/GlideSample'},
         {name: 'GitHub', href: 'https://github.com/HyperionGameTech/HyperionEngine'}
+      ]
+    },
+    {
+      title: 'Strata: Programming Language',
+      titleLink: false,
+      featured: true,
+      tags: ['C', 'LLVM'],
+      description:
+          'A statically typed language for game engines, with a compiler written in C11 on top of LLVM. SIMD vector types, optionals, owned boxes and <code>rc&lt;T&gt;</code>, destructors, <code>defer</code>, and C interop built for binding engine APIs',
+      code: `struct Particle
+{
+    float4 pos;
+    Particle? next;   // optional: may be empty
+};
+
+^Particle head = Particle { .pos = float4(1.0) };   // owned, freed at scope end
+Particle? cur = head;
+while (cur?)
+{
+    cur = cur.next;
+}`,
+      links: [
+        {name: 'Strata (GitHub)', href: 'https://github.com/StrataLanguage/stratac'}
+      ]
+    },
+    {
+      title: 'rna: Rendering Research Sandbox',
+      featured: true,
+      tags: ['Rust', 'Vulkan', 'Lua'],
+      description:
+          'Where I prototype rendering techniques and implement papers as well as experiment with new ideas. A Rust and Vulkan renderer driven by hot-reloaded Lua scripts.',
+      bullets: [
+        '<b>Diffuse GI:</b> PRT probes, surfels, light propagation volumes, radiance cascades, SDF GI',
+        '<b>Reflections:</b> SDF tracing, voxel cone tracing, and "bricks", a sparse acceleration structure for software ray tracing'
+      ],
+      img: [
+        {
+          href: 'rna-bricks.jpg',
+          description: 'Reflection techniques compared in rna: image-based lighting, naive ray tracing, SDF tracing, and bricks.'
+        }
+      ],
+      links: [
+        {name: 'Read: Bricks', href: 'blog/p/bricks-experimental-acceleration-structure.html'}
+      ]
+    },
+    {
+      title: 'Arbor: Procedural Foliage, Trees, Rocks, etc. Generator',
+      featured: true,
+      tags: ['Rust', 'OpenGL', 'WebAssembly'],
+      description:
+          'A procedural generator for trees, shrubs, vines, ground cover and rocks, aiming for SpeedTree-quality models of 7k-20k triangles. It exports wind data as a glTF extension, and includes a PBR viewer with live parameter editing that also runs in the browser.',
+      img: [
+        {
+          href: 'arbor.jpg',
+          description: 'The Arbor viewer, editing a fir tree with live parameters, image-based lighting and wind.'
+        }
+      ],
+      links: [
+        {name: 'Try it in your browser', href: 'https://ajmd.dev/arbor/'},
+        {name: 'GitHub', href: 'https://github.com/ajmd17/arbor'}
       ]
     },
     /*{
@@ -120,36 +197,35 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       title: 'HypScript',
       tags: ['C++'],
       description:
-          'A programming language written from scratch in C++. Includes bytecode language and virtual machine with garbage collection.',
+          'Hyperion\'s original scripting language, written from scratch in C++, with its own compiler, bytecode format, and garbage-collected virtual machine.',
       links: [{name: 'GitHub', href: 'https://github.com/notomorrow/hypscript'}]
     },
     {
-      title: 'Gaussian Splatting',
+      title: 'Helios: WebGL Renderer',
       description:
-          'A WebGL renderer written in TypeScript and Rust. Includes a simple scene graph, PBR, post-processing, a 3D Gaussian Splatting implementation and more.',
+          'A WebGL renderer written in TypeScript and Rust (WebAssembly), with a scene graph, PBR, post-processing, and a 3D Gaussian Splatting implementation.',
       tags: ['TypeScript', 'WebGL', 'Rust', 'WebAssembly'],
       img: ['helios_1.png'],
       links: [{name: 'GitHub', href: 'https://github.com/ajmd17/helios'}]
     },
     {
-      title: 'Beacon - Open Source AI Agent',
-      featured: true,
+      title: 'Beacon: Open Source AI Coding Agent',
       tags: ['TypeScript', 'Machine Learning'],
       videos: [{
         href: 'beacon-clip.webm',
         description:
-            'This video showcases the Beacon AI agent harness. The tool is designed to help developers write code faster by providing code suggestions and completions in editor as well as an interactive chat API.',
+            'Beacon running in the editor: an agentic chat for multi-step coding tasks, plus inline completions.',
       }],
-      description: 'AI Agent coding harness, allowing usage of any OpenAI-compatible API usage of locally ran language models. The tool is designed to help developers write code faster by providing a full streamlined agent as well as inline completions for FIM-supported models such as Qwen 3.',
+      description: 'An AI coding agent that works with any OpenAI-compatible API, including locally run models. Provides a full agent for multi-step tasks, plus inline completions for fill-in-the-middle models such as Qwen 3.',
       links: [
         {name: 'GitHub', href: 'https://github.com/ajmd17/BeaconAI'}
       ]
     },
     {
-      title: 'BlockML - Component Language',
+      title: 'BlockML: Component Language',
       tags: ['JavaScript'],
       description:
-          'A web framework similar to React, with a syntax that is similar to JSON or QML.',
+          'A React-style web framework with a declarative syntax inspired by JSON and QML.',
       img: ['blockml_1.jpg'],
       links: [
         {name: 'GitHub', href: 'https://github.com/ajmd17/blockml'}, {
@@ -166,7 +242,8 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'May 2025',
       endDate: 'Present',
       description: `
-        - Working on rendering and engine features and bug fixes for Warframe using C++ and Vulkan (proprietary engine), primarily focused on Android and iOS platforms
+        - Rendering and engine features and fixes for Warframe in Digital Extremes' proprietary C++ / Vulkan engine
+        - Focused on the Android and iOS platforms
       `.trim(),
       links:
           [{name: 'Digital Extremes', href: 'https://www.digitalextremes.com/'}]
@@ -177,11 +254,10 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'March 2024',
       endDate: 'April 2025',
       description: `
-        - Developed editor tools for Unreal Engine 5 to assist in game development
-        - Led development of multiple projects
-        - Various tasks related to rendering
-        - Optimization of game performance
-        - Solved crashes and out of memory issues
+        - Built Unreal Engine 5 editor tools to speed up game development
+        - Led development on multiple projects
+        - Rendering work and game performance optimization
+        - Tracked down and fixed crashes and out-of-memory issues
       `.trim(),
       links:
           [{name: 'Free Range Games', href: 'https://www.freerangegames.com/'}]
@@ -192,12 +268,11 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'January 2023',
       endDate: 'January 2024',
       description: `
-        - Developed cloud streaming platform for Unreal Engine 5 w/ WebRTC
-        - Designed and developed Unreal Engine plugins to improve artist workflow
-        - Built a rendering engine using WebGL, supporting 3D Gaussian Splatting
-        - Used machine learning to automate 3D model creation of scanned rooms
+        - Built a cloud streaming platform for Unreal Engine 5 using WebRTC
+        - Designed and built Unreal Engine plugins to improve artist workflow
+        - Built a WebGL rendering engine with 3D Gaussian Splatting support
+        - Used machine learning to automate 3D model creation from scanned rooms
         - Integrated RAG into Chido's AI assistant
-
       `.trim(),
       videos: [
         {
@@ -222,11 +297,10 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'April 2022',
       endDate: 'April 2023',
       description: `
-        - Rendering focused tasks for The Witcher 3 next gen, such as ray tracing, using DirectX 12
-        - Implemented photomode into The Witcher 3
-        - Optimizing game performance on Playstation 5
-        - Assisted with multiplayer tasks on Project Sirius using Unreal Engine
-
+        - Rendering work on The Witcher 3 next-gen update (shipped December 2022), including ray tracing, in DirectX 12
+        - Implemented The Witcher 3's photo mode
+        - Optimized game performance on PlayStation 5
+        - Contributed to multiplayer on Project Sirius in Unreal Engine
       `.trim(),
       links: [{name: 'CD Projekt Red', href: 'https://www.cdprojekt.com/en/'}]
     },
@@ -234,12 +308,11 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       name: 'Carbide (formerly Securicy)',
       title: 'Team Lead, Software Developer',
       startDate: 'May 2019',
-      endDate: 'Febuary 2022',
+      endDate: 'February 2022',
       description: `
-        - Development and maintenance of Rails web app
+        - Developed and maintained the company's Ruby on Rails web app
         - Led development of several projects and features
-        - Team lead of integrations
-
+        - Team lead for integrations
       `.trim(),
       links: [{name: 'Carbide', href: 'https://carbidesecure.com/'}]
     },
@@ -249,7 +322,7 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'June 2017',
       endDate: 'March 2019',
       description: `
-        - Developed and maintained Rails web app, used by organizers of music festival leaders such as Burning Man and Coachella
+        - Developed and maintained a Ruby on Rails web app used by the organizers of festivals such as Burning Man and Coachella
       `.trim(),
       links: [{
         name: 'Marcato (Archived)',
@@ -263,7 +336,7 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       startDate: 'January 2016',
       endDate: 'May 2017',
       description: `
-        * Developed an online marketplace to connect buyers and sellers of agricultural goods.
+        - Built an online marketplace connecting buyers and sellers of agricultural goods
       `.trim(),
       links: [{
         name: 'Bidsquid (Archived)',
@@ -272,8 +345,9 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
     }
   ],
   skills: [
-    'Game Engines', 'C++', 'C', 'Systems programming',
-    'Shaders', 'Graphics Programming', 'C#',
-    'Compiler Development', 'Programming Language Design'
+    'Engine Architecture', 'Real-time Rendering', 'Global Illumination', 'Ray Tracing',
+    'GPU Performance', 'Console & Mobile', 'Compilers & Language Design',
+    'C++', 'C', 'C#', 'Rust', 'HLSL / GLSL',
+    'DirectX 12', 'Vulkan', 'WebGPU', 'Unreal Engine'
   ]
 }

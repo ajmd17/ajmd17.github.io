@@ -110,7 +110,7 @@ const previewModalInstance = new class PreviewModal {
     }
 
     _enableScroll() {
-        document.body.style.overflow = 'scroll'
+        document.body.style.overflow = ''
     }
 
     _disableScroll() {
@@ -211,7 +211,7 @@ function buildPortfolioItem(item) {
 
     const $projectTitle = $('<div class="project-title">');
 
-    if (item.links && item.links[0]) {
+    if (item.links && item.links[0] && item.titleLink !== false) {
         $projectTitle.append(`<h3><a href="${item.links[0].href}" target="_blank">${itemTitle}${item.wip ? ' (WIP)' : ''}</a></h3>`)
     } else {
         $projectTitle.append(`<h3>${itemTitle}${item.wip ? ' (WIP)' : ''}</h3>`)
@@ -228,7 +228,20 @@ function buildPortfolioItem(item) {
     }
 
     $header.append($projectTitle)
+
+    if (item.stat) {
+        $header.append(`<div class="stat"><i class="fas fa-star"></i> ${item.stat}</div>`)
+    }
+
     $header.append(`<p class="description">${renderLinksAsHtml(item.description)}</p>`)
+
+    if (item.bullets) {
+        $header.append(`<ul class="description bullets">${item.bullets.map((bullet) => `<li>${bullet}</li>`).join('')}</ul>`)
+    }
+
+    if (item.code) {
+        $header.append($('<pre class="code"></pre>').text(item.code))
+    }
 
     $card.append($header)
 
@@ -295,10 +308,10 @@ function buildEmploymentItems() {
                 <h3>${item.name}</h3>
                 <div class="title-start-end">
                     <p class="text">${item.title}</p>
-                    <p class="text">${item.startDate} / ${item.endDate}</p>
+                    <p class="text">${item.startDate} &ndash; ${item.endDate}</p>
                 </div>
             </div>
-            ${item.description ? `<div class="description">${item.description.split('\n').map(str => `<div class="line">${str.replaceAll('*', '&bull;')}</div>`).join('')}</div>` : ''}
+            ${item.description ? `<ul class="description">${item.description.split('\n').map(str => str.trim().replace(/^[-*]\s*/, '')).filter(Boolean).map(str => `<li class="line">${str}</li>`).join('')}</ul>` : ''}
             ${item.links ? `<div class="links">${item.links.map((link) => `<a href="${link.href}" target="_blank">${link.name}&nbsp;&nbsp;<i class="fas fa-external-link-square-alt"></i></a>`).join('')}</div>` : ''}
         `);
 
@@ -359,25 +372,34 @@ $(document).ready(function () {
 
 
     function isDarkModeEnabled() {
+        let saved = null;
+
+        try {
+            saved = localStorage.getItem('theme');
+        } catch (e) {}
+
+        if (saved) {
+            return saved === 'dark';
+        }
+
         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
-    if (isDarkModeEnabled()) {
-        jQuery('body').addClass('dark');
-        $nightModeBtn.html('<i class="fas fa-sun" ></i>');
-    } else {
-        jQuery('body').removeClass('dark');
-        $nightModeBtn.html('<i class="fas fa-moon" ></i>');
+    function setDarkMode(enabled) {
+        jQuery('body').toggleClass('dark', enabled);
+        $nightModeBtn.html(enabled ? '<i class="fas fa-sun" ></i>' : '<i class="fas fa-moon" ></i>');
     }
 
+    setDarkMode(isDarkModeEnabled());
+
     $nightModeBtn.click(function () {
-        if (jQuery('body').hasClass('dark')) {
-            $nightModeBtn.html('<i class="fas fa-moon" ></i>');
-            jQuery('body').removeClass('dark');
-        } else {
-            $nightModeBtn.html('<i class="fas fa-sun" ></i>');
-            jQuery('body').addClass('dark');
-        }
+        const enabled = !jQuery('body').hasClass('dark');
+
+        setDarkMode(enabled);
+
+        try {
+            localStorage.setItem('theme', enabled ? 'dark' : 'light');
+        } catch (e) {}
     });
 
 
