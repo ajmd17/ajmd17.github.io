@@ -4,7 +4,6 @@ var PORTFOLIO_DATA = {
     {
       title: 'Hyperion Game Engine',
       featured: true,
-      stat: '550+ stars on GitHub',
       description:
           'A full-featured, open-source game engine in C++ that I\'ve been building since 2016, focused on high-fidelity rendering that doesn\'t need high-end hardware.',
       bullets: [
@@ -49,6 +48,31 @@ var PORTFOLIO_DATA = {
         {name: 'Website', href: 'https://hyperionengine.dev'},
         {name: 'Play the sample game in your browser', href: 'https://hyperionengine.dev/GlideSample'},
         {name: 'GitHub', href: 'https://github.com/HyperionGameTech/HyperionEngine'}
+      ]
+    },
+    {
+      title: 'Glide: Hyperion in the Browser',
+      featured: true,
+      tags: ['C++', 'WebGPU', 'WebAssembly'],
+      description:
+          'A sample game for Hyperion: steer a paper plane through desert canyons and fly through rings. It\'s a C++ game project built and packaged from the Hyperion editor, then compiled to WebAssembly with Hyperion\'s WebGPU backend, so it plays in the browser with nothing to install.',
+      bullets: [
+        'The canyon is lit by Glimmer, Hyperion\'s real-time GI',
+        'The canyon walls are built from rocks generated with Arbor'
+      ],
+      img: [
+        {
+          href: 'glide.jpg',
+          description: 'Glide\'s title screen, running in the browser on Hyperion\'s WebGPU backend.'
+        },
+        {
+          href: 'glide-gameplay.jpg',
+          description: 'Flying through the canyon in Glide.'
+        }
+      ],
+      links: [
+        {name: 'Play in your browser', href: 'https://hyperionengine.dev/GlideSample'},
+        {name: 'Sample games (GitHub)', href: 'https://github.com/HyperionGameTech/HyperionSamples'}
       ]
     },
     {
@@ -109,6 +133,20 @@ while (cur?)
       links: [
         {name: 'Try it in your browser', href: 'https://ajmd.dev/arbor/'},
         {name: 'GitHub', href: 'https://github.com/ajmd17/arbor'}
+      ]
+    },
+    {
+      title: 'Hyperion Editor MCP',
+      tags: ['C++', 'MCP', 'AI'],
+      description:
+          'An editor plugin that opens the running Hyperion editor to AI agents through the Model Context Protocol. Agents work through the engine\'s reflection system, so they can use any reflected class without hand-written glue.',
+      bullets: [
+        'Query the scene, inspect and edit objects, add components, and call reflected methods',
+        'Import content, run commandlets and editor commands, and read logs and cvars',
+        'Play-test games: enter play mode, send input, and capture the viewport'
+      ],
+      links: [
+        {name: 'GitHub', href: 'https://github.com/HyperionGameTech/HyperionEditorMCP'}
       ]
     },
     /*{
@@ -199,14 +237,6 @@ components of a project.', links: [{ name: 'Visit Site', main: true, href:
       description:
           'Hyperion\'s original scripting language, written from scratch in C++, with its own compiler, bytecode format, and garbage-collected virtual machine.',
       links: [{name: 'GitHub', href: 'https://github.com/notomorrow/hypscript'}]
-    },
-    {
-      title: 'Helios: WebGL Renderer',
-      description:
-          'A WebGL renderer written in TypeScript and Rust (WebAssembly), with a scene graph, PBR, post-processing, and a 3D Gaussian Splatting implementation.',
-      tags: ['TypeScript', 'WebGL', 'Rust', 'WebAssembly'],
-      img: ['helios_1.png'],
-      links: [{name: 'GitHub', href: 'https://github.com/ajmd17/helios'}]
     },
     {
       title: 'Beacon: Open Source AI Coding Agent',
